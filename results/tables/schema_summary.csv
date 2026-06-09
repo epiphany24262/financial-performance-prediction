@@ -1,0 +1,4 @@
+dataset,rows,cols,id_unique,missing_cells,missing_rate,numeric_cols,object_cols,feature_cols,target_cols
+train,1624,212,True,19283,0.056008341853332096,208,4,202,9
+test,406,203,True,5791,0.07026377733019486,199,4,202,0
+sample_submission,406,10,True,0,0.0,10,0,0,0

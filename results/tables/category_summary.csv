@@ -1,0 +1,5 @@
+column,train_unique,test_unique,shared_categories,train_only_categories,test_only_categories,train_missing_rate,test_missing_rate,train_top_value,train_top_freq,test_top_value,test_top_freq
+financialCurrency,2,1,1,1,0,0.012315270935960592,0.009852216748768473,USD,1603,USD,402
+industry,113,88,88,25,0,0.013546798029556651,0.012315270935960592,Biotechnology,212,Biotechnology,61
+recommendationKey,6,5,5,1,0,0.012315270935960592,0.009852216748768473,buy,974,buy,247
+sector,10,10,10,0,0,0.0,0.0,Healthcare,485,Healthcare,121

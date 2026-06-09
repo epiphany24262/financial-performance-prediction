@@ -1,0 +1,17 @@
+﻿name: QuantEnv
+channels:
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+  - https://repo.anaconda.com/pkgs/msys2
+dependencies:
+  - matplotlib
+  - numpy[version='<2.0']
+  - pandas
+  - python=3.10
+  - scikit-learn
+  - scipy
+  - spyder-kernels=2.5
+  - statsmodels
+  - pyarrow
+prefix: D:\Anaconda\envs\QuantEnv

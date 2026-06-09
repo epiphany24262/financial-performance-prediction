@@ -1,0 +1,7 @@
+{
+  "status": "not_started",
+  "best_experiment_id": null,
+  "best_mean_oof_r2": null,
+  "notes": "Stage 1 completed; modeling experiments have not started."
+}
+

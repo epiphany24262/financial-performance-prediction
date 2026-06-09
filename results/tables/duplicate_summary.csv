@@ -1,0 +1,6 @@
+scope,duplicate_rows,duplicate_groups,max_group_size,notes
+train_non_id,16,2,10,exact duplicate rows within the same dataset scope
+train_common_features,16,2,10,exact duplicate rows within the same dataset scope
+test_common_features,2,1,3,exact duplicate rows within the same dataset scope
+train_rows_matching_test_common_features,18,2,10,train rows whose common feature hash also appears in test
+test_rows_matching_train_common_features,4,2,3,test rows whose common feature hash also appears in train
