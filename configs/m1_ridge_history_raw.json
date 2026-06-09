@@ -1,0 +1,12 @@
+{
+  "experiment_id": "M1_ridge_history_raw",
+  "model_name": "Ridge",
+  "model_kind": "ridge",
+  "feature_set": "history_raw",
+  "target_strategy": "direct",
+  "notes": "GroupKFold OOF sklearn baseline",
+  "runtime_seconds": 6.598222200002056,
+  "grouping": "feature_hash_groupkfold",
+  "n_splits": 5,
+  "timestamp_utc": "2026-06-09T12:19:52.918170+00:00"
+}

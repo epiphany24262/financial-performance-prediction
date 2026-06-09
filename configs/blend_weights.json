@@ -1,0 +1,156 @@
+{
+  "experiment_id": "M6_oof_blend",
+  "members": [
+    "B4",
+    "M3",
+    "M4"
+  ],
+  "selection": "per_target_oof_r2",
+  "weights": {
+    "Q0_TOTAL_ASSETS": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.0,
+        0.4,
+        0.6
+      ],
+      "oof_r2": 0.7034889702665642,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_TOTAL_LIABILITIES": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "oof_r2": 0.911212854578829,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_TOTAL_STOCKHOLDERS_EQUITY": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "oof_r2": 0.40086690788760915,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_GROSS_PROFIT": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "oof_r2": 0.984133093036147,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_COST_OF_REVENUES": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "oof_r2": 0.9644480319003591,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_REVENUES": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.3,
+        0.0,
+        0.7
+      ],
+      "oof_r2": 0.9728831573820925,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_OPERATING_INCOME": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "oof_r2": 0.8268065956859505,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_OPERATING_EXPENSES": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.97,
+        0.03,
+        0.0
+      ],
+      "oof_r2": 0.987440990901597,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    },
+    "Q0_EBITDA": {
+      "members": [
+        "B4",
+        "M3",
+        "M4"
+      ],
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "oof_r2": 0.9637588447806247,
+      "coarse_step": 0.05,
+      "fine_step": 0.01,
+      "fine_radius": 0.05
+    }
+  },
+  "timestamp_utc": "2026-06-09T15:07:14.272808+00:00"
+}

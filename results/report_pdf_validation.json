@@ -1,0 +1,12 @@
+{
+  "pdf_path": "deliverables\\financial_performance_prediction_report.pdf",
+  "pdf_sha256": "87f283de61393b52eebc4fb47ff2e441f624a71d8433656c2cd02902640a9d1d",
+  "page_count": 9,
+  "first_page_has_title": true,
+  "preview_images": [
+    "results\\report_pdf_preview\\report_page_1.png",
+    "results\\report_pdf_preview\\report_page_3.png",
+    "results\\report_pdf_preview\\report_page_9.png"
+  ],
+  "generated_utc": "2026-06-09T15:37:42.395804+00:00"
+}

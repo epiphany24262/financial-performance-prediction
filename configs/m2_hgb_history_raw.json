@@ -1,0 +1,12 @@
+{
+  "experiment_id": "M2_hgb_history_raw",
+  "model_name": "HistGradientBoostingRegressor",
+  "model_kind": "hgb",
+  "feature_set": "history_raw",
+  "target_strategy": "direct",
+  "notes": "GroupKFold OOF sklearn baseline",
+  "runtime_seconds": 107.4016182000014,
+  "grouping": "feature_hash_groupkfold",
+  "n_splits": 5,
+  "timestamp_utc": "2026-06-09T12:21:40.408480+00:00"
+}

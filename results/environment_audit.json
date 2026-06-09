@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-06-09T11:49:36.622204+00:00",
+  "timestamp_utc": "2026-06-09T13:22:56.960299+00:00",
   "conda_environment_name": "QuantEnv",
   "python_executable": "D:\\Anaconda\\envs\\QuantEnv\\python.exe",
   "python_version": "Python 3.10.20",
@@ -35,7 +35,7 @@
     "scipy": "1.15.3",
     "matplotlib": "3.9.2",
     "scikit-learn": "1.7.2",
-    "catboost": null,
+    "catboost": "1.2.10",
     "xgboost": null,
     "lightgbm": null,
     "optuna": null,
@@ -51,7 +51,6 @@
     "pytest-cov": "7.1.0"
   },
   "missing_packages": [
-    "catboost",
     "xgboost",
     "lightgbm",
     "optuna",

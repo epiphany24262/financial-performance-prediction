@@ -1,0 +1,30 @@
+{
+  "experiment_id": "M4_catboost_residual_history_metadata_engineered",
+  "model_name": "CatBoostRegressor",
+  "mode": "residual",
+  "feature_set": "history_metadata_engineered",
+  "baseline_reference": "B4",
+  "timestamp_utc": "2026-06-09T13:21:56.558737+00:00",
+  "catboost_params": {
+    "loss_function": "RMSE",
+    "iterations": 180,
+    "learning_rate": 0.03,
+    "depth": 4,
+    "l2_leaf_reg": 8.0,
+    "random_seed": 42,
+    "od_type": "Iter",
+    "od_wait": 20,
+    "use_best_model": true
+  },
+  "best_iterations": [
+    172,
+    174,
+    180,
+    104,
+    100,
+    100,
+    100,
+    100,
+    100
+  ]
+}

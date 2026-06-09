@@ -1,0 +1,21 @@
+{
+  "submission_path": "deliverables/submission.csv",
+  "submission_sha256": "c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f",
+  "row_count": 406,
+  "column_count": 10,
+  "columns": [
+    "Id",
+    "Q0_REVENUES",
+    "Q0_COST_OF_REVENUES",
+    "Q0_GROSS_PROFIT",
+    "Q0_OPERATING_EXPENSES",
+    "Q0_EBITDA",
+    "Q0_OPERATING_INCOME",
+    "Q0_TOTAL_ASSETS",
+    "Q0_TOTAL_LIABILITIES",
+    "Q0_TOTAL_STOCKHOLDERS_EQUITY"
+  ],
+  "final_experiment_id": "M6_oof_blend",
+  "best_adjustment": "none",
+  "timestamp_utc": "2026-06-09T15:07:14.290730+00:00"
+}

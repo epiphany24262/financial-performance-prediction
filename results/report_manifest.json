@@ -1,0 +1,37 @@
+{
+  "best_experiment_id": "M6_oof_blend",
+  "figure_files": [
+    "fig01_sector_distribution.png",
+    "fig02_industry_top20.png",
+    "fig03_missing_top20.png",
+    "fig04_missing_by_quarter.png",
+    "fig05_target_distributions.png",
+    "fig06_lag_correlation_heatmap.png",
+    "fig07_accounting_identity_error.png",
+    "fig08_target_correlation_heatmap.png",
+    "fig09_model_comparison.png",
+    "fig10_target_score_heatmap.png",
+    "fig11_oof_scatter.png",
+    "fig12_residual_distribution.png",
+    "fig13_blend_weights.png"
+  ],
+  "table_files": [
+    "all_model_scores.csv",
+    "baseline_scores.csv",
+    "sklearn_model_scores.csv",
+    "catboost_model_scores.csv",
+    "final_model_scores.csv",
+    "blend_scores.csv",
+    "accounting_postprocess_scores.csv"
+  ],
+  "report_sha256": "35b09c99da5d9495bfd516fb9492412e822f0cf49b74ec89bd45045743f3d089",
+  "submission_sha256": "c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f",
+  "generated_utc": "2026-06-09T15:37:20.398150+00:00",
+  "report_pdf_sha256": "87f283de61393b52eebc4fb47ff2e441f624a71d8433656c2cd02902640a9d1d",
+  "report_pdf_page_count": 9,
+  "report_pdf_preview_images": [
+    "results\\report_pdf_preview\\report_page_1.png",
+    "results\\report_pdf_preview\\report_page_3.png",
+    "results\\report_pdf_preview\\report_page_9.png"
+  ]
+}

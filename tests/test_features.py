@@ -5,6 +5,7 @@ import pandas as pd
 
 from src.constants import TARGET_COLUMNS
 from src.feature_engineering import (
+    build_feature_frame,
     build_feature_group_id,
     historical_columns_for_target,
     replace_inf_with_nan,
@@ -43,3 +44,14 @@ def test_historical_columns_for_target_uses_q1_to_q10_order():
     assert cols[-1] == "Q10_REVENUES"
     assert len(cols) == 10
 
+
+def test_build_feature_frame_excludes_targets_and_replaces_inf():
+    frame = pd.read_csv("train.csv")
+    frame.loc[0, "Q1_REVENUES"] = np.inf
+
+    features = build_feature_frame(frame, feature_set="history_engineered")
+
+    assert all(target not in features.columns for target in TARGET_COLUMNS)
+    assert not np.isinf(features.select_dtypes(include=[np.number]).to_numpy()).any()
+    assert "hist_REVENUES_mean_last_4" in features.columns
+    assert "chg_REVENUES_q1_minus_q2" in features.columns

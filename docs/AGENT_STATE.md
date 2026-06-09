@@ -1,19 +1,19 @@
 # AGENT_STATE
 
-- Current phase: Baseline stage complete; entering feature engineering and model stage.
+- Current phase: Final validation passed; preparing final delivery commit.
 - Last successful commands:
+  - `conda run -n QuantEnv python -m compileall src scripts tests -q`
   - `conda run -n QuantEnv python -m pytest -q`
-  - `conda run -n QuantEnv python scripts/run_baselines.py`
-- Current best OOF mean R2: `0.7830834896750798`
-- Current best experiment: `B4`
+  - `conda run -n QuantEnv python scripts/validate_delivery.py`
+- Current best OOF mean R2: `0.8572266051577525` from M6 OOF blend
+- Current best experiment: `M6_oof_blend`
 - Open BLOCKER: none.
 - Open MAJOR issues:
-  - MAJOR-001: modeling/notebook dependencies still missing.
-  - MAJOR-002: identical feature rows require GroupKFold grouping.
-  - MAJOR-003: numeric `+inf` values must be converted to `NaN` at model entry points.
-  - MAJOR-004: `Q0_TOTAL_STOCKHOLDERS_EQUITY` remains weak under rule baselines.
-- Next single action: implement fold-safe feature engineering and run M1/M2 sklearn baselines before CatBoost.
-- Latest Git commit: use `git log -1 --oneline`.
+  - MAJOR-001: optional comparison/notebook dependencies remain uninstalled (`xgboost`, `lightgbm`, `optuna`, `jupyter`).
+  - MAJOR-002: identical feature rows are already grouped in current CV code; keep the safeguard for future extensions.
+  - MAJOR-003: numeric `+inf` values are already converted to `NaN` at model entry points; keep the safeguard for future extensions.
+- Next single action: commit final delivery artifacts and report the verification result.
+- Latest Git commit: `8dece49 feat: add grouped baselines and pytest checks`
 
 ## Completed Outputs
 
@@ -30,3 +30,29 @@
   - `results/cv_scores/b0.csv` to `results/cv_scores/b4.csv`
   - `results/predictions/baseline_b4_test_predictions.csv`
   - `configs/baseline_blend_weights.json`
+- Sklearn models:
+  - `results/tables/sklearn_model_scores.csv`
+  - `results/tables/M1_ridge_history_raw_scores.csv`
+  - `results/tables/M2_hgb_history_raw_scores.csv`
+  - `results/oof/m1_ridge_history_raw.csv`
+  - `results/oof/m2_hgb_history_raw.csv`
+  - `results/cv_scores/m1_ridge_history_raw.csv`
+  - `results/cv_scores/m2_hgb_history_raw.csv`
+  - `results/predictions/m1_ridge_history_raw_test_predictions.csv`
+  - `results/predictions/m2_hgb_history_raw_test_predictions.csv`
+- CatBoost models:
+  - `results/tables/catboost_model_scores.csv`
+  - `results/tables/M3_catboost_direct_history_metadata_engineered_scores.csv`
+  - `results/tables/M4_catboost_residual_history_metadata_engineered_scores.csv`
+  - `results/oof/m3_catboost_direct_history_metadata_engineered.csv`
+  - `results/oof/m4_catboost_residual_history_metadata_engineered.csv`
+  - `results/cv_scores/m3_catboost_direct_history_metadata_engineered.csv`
+  - `results/cv_scores/m4_catboost_residual_history_metadata_engineered.csv`
+  - `results/predictions/m3_catboost_direct_history_metadata_engineered_test_predictions.csv`
+  - `results/predictions/m4_catboost_residual_history_metadata_engineered_test_predictions.csv`
+- Final delivery:
+  - `deliverables/financial_performance_prediction_final.ipynb`
+  - `deliverables/financial_performance_prediction_report.docx`
+  - `deliverables/financial_performance_prediction_report.pdf`
+  - `deliverables/README_delivery.md`
+  - `deliverables/submission.csv`

@@ -1,0 +1,207 @@
+{
+  "passed": true,
+  "timestamp_utc": "2026-06-09T15:44:18.483974+00:00",
+  "checks": [
+    {
+      "name": "environment_name",
+      "passed": true,
+      "details": "Environment must be QuantEnv"
+    },
+    {
+      "name": "environment_path",
+      "passed": true,
+      "details": "Python executable should point to QuantEnv"
+    },
+    {
+      "name": "raw_exists:train.csv",
+      "passed": true,
+      "details": "Raw file must exist"
+    },
+    {
+      "name": "raw_hash:train.csv",
+      "passed": true,
+      "details": "Raw file hash must match frozen manifest"
+    },
+    {
+      "name": "raw_exists:test.csv",
+      "passed": true,
+      "details": "Raw file must exist"
+    },
+    {
+      "name": "raw_hash:test.csv",
+      "passed": true,
+      "details": "Raw file hash must match frozen manifest"
+    },
+    {
+      "name": "raw_exists:sample_submission.csv",
+      "passed": true,
+      "details": "Raw file must exist"
+    },
+    {
+      "name": "raw_hash:sample_submission.csv",
+      "passed": true,
+      "details": "Raw file hash must match frozen manifest"
+    },
+    {
+      "name": "raw_exists:data_dictionary.txt",
+      "passed": true,
+      "details": "Raw file must exist"
+    },
+    {
+      "name": "raw_hash:data_dictionary.txt",
+      "passed": true,
+      "details": "Raw file hash must match frozen manifest"
+    },
+    {
+      "name": "raw_exists:说明.docx",
+      "passed": true,
+      "details": "Raw file must exist"
+    },
+    {
+      "name": "raw_hash:说明.docx",
+      "passed": true,
+      "details": "Raw file hash must match frozen manifest"
+    },
+    {
+      "name": "submission_shape",
+      "passed": true,
+      "details": "Submission shape must match sample template"
+    },
+    {
+      "name": "submission_columns",
+      "passed": true,
+      "details": "Submission columns must preserve template order"
+    },
+    {
+      "name": "submission_ids",
+      "passed": true,
+      "details": "Submission Id column must match sample submission exactly"
+    },
+    {
+      "name": "submission_nan",
+      "passed": true,
+      "details": "Submission must not contain NaN"
+    },
+    {
+      "name": "submission_inf",
+      "passed": true,
+      "details": "Submission must not contain inf"
+    },
+    {
+      "name": "submission_sha",
+      "passed": true,
+      "details": "Submission sha must match manifest"
+    },
+    {
+      "name": "notebook_exists",
+      "passed": true,
+      "details": "Executed notebook must exist"
+    },
+    {
+      "name": "report_exists",
+      "passed": true,
+      "details": "Report DOCX must exist"
+    },
+    {
+      "name": "report_pdf_exists",
+      "passed": true,
+      "details": "Report PDF preview must exist"
+    },
+    {
+      "name": "readme_exists",
+      "passed": true,
+      "details": "README must exist"
+    },
+    {
+      "name": "notebook_sha",
+      "passed": true,
+      "details": "Notebook sha must match manifest"
+    },
+    {
+      "name": "report_sha",
+      "passed": true,
+      "details": "Report sha must match manifest"
+    },
+    {
+      "name": "report_pdf_sha",
+      "passed": true,
+      "details": "Report PDF sha must match report manifest"
+    },
+    {
+      "name": "report_pdf_validation_sha",
+      "passed": true,
+      "details": "Report PDF sha must match PDF validation"
+    },
+    {
+      "name": "report_pdf_pages",
+      "passed": true,
+      "details": "Report PDF must have pages"
+    },
+    {
+      "name": "report_pdf_title",
+      "passed": true,
+      "details": "Report PDF first page must contain title text"
+    },
+    {
+      "name": "report_pdf_preview:results\\report_pdf_preview\\report_page_1.png",
+      "passed": true,
+      "details": "PDF preview image must exist"
+    },
+    {
+      "name": "report_pdf_preview:results\\report_pdf_preview\\report_page_3.png",
+      "passed": true,
+      "details": "PDF preview image must exist"
+    },
+    {
+      "name": "report_pdf_preview:results\\report_pdf_preview\\report_page_9.png",
+      "passed": true,
+      "details": "PDF preview image must exist"
+    },
+    {
+      "name": "readme_sha",
+      "passed": true,
+      "details": "README sha must match package manifest"
+    },
+    {
+      "name": "best_config",
+      "passed": true,
+      "details": "Best config should reflect final blend stage"
+    },
+    {
+      "name": "report_paragraphs",
+      "passed": true,
+      "details": "Report should contain multiple paragraphs"
+    },
+    {
+      "name": "report_tables",
+      "passed": true,
+      "details": "Report should contain multiple tables"
+    },
+    {
+      "name": "report_figures",
+      "passed": true,
+      "details": "Report should embed the key figures"
+    },
+    {
+      "name": "report_title",
+      "passed": true,
+      "details": "Report title should be present"
+    },
+    {
+      "name": "experiment_log_rows",
+      "passed": true,
+      "details": "Experiment log should include 5 folds x 9 targets for each required experiment"
+    },
+    {
+      "name": "experiment_log_ids",
+      "passed": true,
+      "details": "Required experiments must be logged"
+    }
+  ],
+  "best_experiment_id": "M6_oof_blend",
+  "best_mean_oof_r2": 0.8572266051577525,
+  "final_submission_sha256": "c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f",
+  "report_sha256": "35b09c99da5d9495bfd516fb9492412e822f0cf49b74ec89bd45045743f3d089",
+  "report_pdf_sha256": "87f283de61393b52eebc4fb47ff2e441f624a71d8433656c2cd02902640a9d1d",
+  "notebook_sha256": "8d17b0faec8b427fc2eb5aede737cf8d23731f213c72535d90133875e1082def"
+}

@@ -1,0 +1,6 @@
+{
+  "experiment_id": "M7_accounting_postprocess",
+  "selected_adjustment": "none",
+  "selection": "max_mean_oof_r2_among_predefined_accounting_adjustments",
+  "timestamp_utc": "2026-06-09T15:07:14.276991+00:00"
+}

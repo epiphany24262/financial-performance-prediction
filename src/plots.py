@@ -129,3 +129,103 @@ def plot_target_correlation_heatmap(corr: pd.DataFrame, path: Path) -> None:
     ax.set_title("图8  目标变量相关性热力图")
     fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02)
     _save(fig, path)
+
+
+def plot_model_comparison(scores: pd.DataFrame, path: Path) -> None:
+    set_plot_style()
+    ordered = scores.sort_values("mean_r2", ascending=True)
+    fig, ax = plt.subplots(figsize=(10, 5.5))
+    colors = ["#BAB0AC" if value < ordered["mean_r2"].max() else "#4C78A8" for value in ordered["mean_r2"]]
+    ax.barh(ordered["experiment_id"], ordered["mean_r2"], color=colors)
+    ax.set_title("Model OOF Mean R2 Comparison")
+    ax.set_xlabel("OOF mean R2")
+    ax.set_ylabel("Experiment")
+    for idx, value in enumerate(ordered["mean_r2"]):
+        ax.text(value, idx, f" {value:.3f}", va="center", fontsize=8)
+    _save(fig, path)
+
+
+def plot_target_score_heatmap(scores: pd.DataFrame, path: Path) -> None:
+    set_plot_style()
+    target_cols = [col for col in scores.columns if col.startswith("r2_Q0_")]
+    matrix = scores.set_index("experiment_id")[target_cols]
+    matrix.columns = [col.removeprefix("r2_") for col in matrix.columns]
+    fig, ax = plt.subplots(figsize=(13, max(4.5, 0.45 * len(matrix))))
+    im = ax.imshow(matrix.values, aspect="auto", cmap="RdYlGn", vmin=-0.25, vmax=1.0)
+    ax.set_xticks(range(len(matrix.columns)))
+    ax.set_xticklabels(matrix.columns, rotation=35, ha="right")
+    ax.set_yticks(range(len(matrix.index)))
+    ax.set_yticklabels(matrix.index)
+    ax.set_title("Target-Level OOF R2 Heatmap")
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            ax.text(j, i, f"{matrix.iloc[i, j]:.2f}", ha="center", va="center", fontsize=7)
+    fig.colorbar(im, ax=ax, fraction=0.02, pad=0.02)
+    _save(fig, path)
+
+
+def plot_oof_scatter(oof: pd.DataFrame, path: Path) -> None:
+    set_plot_style()
+    targets = [col.removeprefix("actual_") for col in oof.columns if col.startswith("actual_Q0_")]
+    ncols = 3
+    nrows = int(np.ceil(len(targets) / ncols))
+    fig, axes = plt.subplots(nrows, ncols, figsize=(14, 11))
+    axes = np.asarray(axes).reshape(-1)
+    for ax, target in zip(axes, targets):
+        actual = oof[f"actual_{target}"].astype(float)
+        pred = oof[f"pred_{target}"].astype(float)
+        actual_log = np.sign(actual) * np.log1p(np.abs(actual))
+        pred_log = np.sign(pred) * np.log1p(np.abs(pred))
+        ax.scatter(actual_log, pred_log, s=9, alpha=0.45, color="#4C78A8", edgecolors="none")
+        lower = np.nanmin([actual_log.min(), pred_log.min()])
+        upper = np.nanmax([actual_log.max(), pred_log.max()])
+        ax.plot([lower, upper], [lower, upper], color="#E45756", linewidth=1)
+        ax.set_title(target)
+        ax.set_xlabel("actual signed log1p")
+        ax.set_ylabel("pred signed log1p")
+    for ax in axes[len(targets):]:
+        ax.axis("off")
+    fig.suptitle("OOF Actual vs Predicted Values", y=1.01, fontsize=13)
+    _save(fig, path)
+
+
+def plot_residual_distribution(oof: pd.DataFrame, path: Path) -> None:
+    set_plot_style()
+    residuals = []
+    labels = []
+    for col in oof.columns:
+        if not col.startswith("actual_Q0_"):
+            continue
+        target = col.removeprefix("actual_")
+        residual = oof[f"pred_{target}"].astype(float) - oof[f"actual_{target}"].astype(float)
+        scale = np.nanmedian(np.abs(oof[f"actual_{target}"].astype(float))) or 1.0
+        residuals.append((residual / scale).replace([np.inf, -np.inf], np.nan).dropna())
+        labels.append(target)
+    fig, ax = plt.subplots(figsize=(12, 5.5))
+    ax.boxplot(residuals, labels=labels, showfliers=False, vert=False)
+    ax.set_title("OOF Residual Distribution by Target")
+    ax.set_xlabel("Residual / median(abs(actual))")
+    ax.set_ylabel("Target")
+    _save(fig, path)
+
+
+def plot_blend_weights(blend_scores: pd.DataFrame, path: Path) -> None:
+    set_plot_style()
+    members = blend_scores["members"].iloc[0].split(",")
+    weights = pd.DataFrame(
+        [list(map(float, row.split(","))) for row in blend_scores["weights"]],
+        index=blend_scores["target"],
+        columns=members,
+    )
+    fig, ax = plt.subplots(figsize=(12, 5.5))
+    bottom = np.zeros(len(weights))
+    colors = ["#4C78A8", "#F58518", "#54A24B", "#E45756"]
+    for idx, member in enumerate(members):
+        ax.bar(weights.index, weights[member], bottom=bottom, label=member, color=colors[idx % len(colors)])
+        bottom += weights[member].values
+    ax.set_title("Per-Target OOF Blend Weights")
+    ax.set_xlabel("Target")
+    ax.set_ylabel("Weight")
+    ax.tick_params(axis="x", rotation=35)
+    ax.legend(loc="upper right")
+    _save(fig, path)

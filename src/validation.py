@@ -89,7 +89,12 @@ def stable_row_hash(frame: pd.DataFrame) -> pd.Series:
 def safe_ratio(numerator: pd.Series | np.ndarray, denominator: pd.Series | np.ndarray, eps: float = 1e-9):
     numerator_arr = np.asarray(numerator, dtype="float64")
     denominator_arr = np.asarray(denominator, dtype="float64")
-    return np.where(np.abs(denominator_arr) < eps, np.nan, numerator_arr / denominator_arr)
+    out = np.full(np.broadcast_shapes(numerator_arr.shape, denominator_arr.shape), np.nan, dtype="float64")
+    numerator_arr = np.broadcast_to(numerator_arr, out.shape)
+    denominator_arr = np.broadcast_to(denominator_arr, out.shape)
+    valid = np.abs(denominator_arr) >= eps
+    np.divide(numerator_arr, denominator_arr, out=out, where=valid)
+    return out
 
 
 def signed_log1p(values: pd.Series | np.ndarray):
@@ -125,4 +130,3 @@ def metric_of(column: str) -> str | None:
     if not match:
         return None
     return match.group(2)
-
