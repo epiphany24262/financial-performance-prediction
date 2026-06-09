@@ -1,0 +1,36 @@
+experiment_family: baseline
+n_splits: 5
+cv: GroupKFold
+grouping:
+  feature_columns: all_non_id_non_target_columns
+  replace_inf_with_nan_before_hashing: true
+targets:
+  - Q0_TOTAL_ASSETS
+  - Q0_TOTAL_LIABILITIES
+  - Q0_TOTAL_STOCKHOLDERS_EQUITY
+  - Q0_GROSS_PROFIT
+  - Q0_COST_OF_REVENUES
+  - Q0_REVENUES
+  - Q0_OPERATING_INCOME
+  - Q0_OPERATING_EXPENSES
+  - Q0_EBITDA
+rules:
+  B0: train_fold_mean
+  B1: Q1_copy_then_Q2_to_Q10_fallback
+  B2: Q4_copy_then_nearest_quarter_fallback
+  B3: recent_four_available_quarter_linear_extrapolation
+  B4: per_target_oof_blend_of_B1_B2_B3
+blend:
+  weight_grid_step: 0.1
+  candidate_sets:
+    - [B1]
+    - [B2]
+    - [B3]
+    - [B1, B2]
+    - [B1, B3]
+    - [B1, B2, B3]
+outputs:
+  scores: results/tables/baseline_scores.csv
+  oof: results/oof/baseline_oof.csv
+  weights: configs/baseline_blend_weights.json
+

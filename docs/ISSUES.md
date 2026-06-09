@@ -1,36 +1,47 @@
 # ISSUES
 
-## MAJOR-001: QuantEnv 缺少后续建模与测试依赖
+## MAJOR-001: QuantEnv still misses modeling and notebook dependencies
 
-- 状态: open
-- 发现时间: 2026-06-09
-- 证据: `results/environment_audit.json`
-- 缺失包: `catboost`, `xgboost`, `lightgbm`, `optuna`, `jupyter`, `pytest`, `pytest-cov`
-- 影响: 第一阶段审计不受影响；进入 CatBoost 主模型、可选 GBDT 对照、Optuna 调参、pytest 验收或 Notebook 执行前必须补齐最小必要依赖。
-- 处理原则: 按用户要求，第一阶段不批量安装或升级环境；后续只做最小安装。
+- Status: open
+- Found: 2026-06-09
+- Evidence: `results/environment_audit.json`
+- Current missing packages: `catboost`, `xgboost`, `lightgbm`, `optuna`, `jupyter`
+- Resolved part: `pytest` and `pytest-cov` were installed after the first environment snapshot, then the environment audit and lock files were regenerated.
+- Impact: sklearn baselines and tests can run now. CatBoost, optional GBDT comparison, Optuna tuning, and final Notebook work still require minimal additional installation.
+- Handling: install only the next required package set when entering that stage; do not bulk-upgrade the environment.
 
-## MAJOR-002: 完全重复特征记录必须用于分组交叉验证
+## MAJOR-002: Exact duplicate feature records must remain grouped during CV
 
-- 状态: open
-- 发现时间: 2026-06-09
-- 证据: `results/tables/duplicate_summary.csv`
-- 结果: 训练集 common-feature 重复行 16 行、2 个重复组；测试集 common-feature 重复行 2 行、1 个重复组；train/test 共有 2 个 common-feature 哈希，涉及训练行 18 行、测试行 4 行。
-- 影响: 后续交叉验证若用普通 KFold，会让完全重复历史特征跨折，导致泄漏式高估。
-- 处理原则: 后续所有 OOF 实验必须使用稳定 feature hash 的 `GroupKFold`。
+- Status: mitigated in current baseline code; keep open for future model code.
+- Found: 2026-06-09
+- Evidence: `results/tables/duplicate_summary.csv`, `src/feature_engineering.py`, `src/cv.py`, `tests/test_cv_no_leakage.py`
+- Result: train common-feature duplicate rows: 16 rows across 2 groups. Test common-feature duplicate rows: 2 rows across 1 group. Train/test share 2 common-feature hashes.
+- Impact: plain KFold would leak identical history records across train/validation folds.
+- Handling: all OOF experiments must use feature-hash `GroupKFold`; the current B0-B4 run already does this.
 
-## MINOR-001: 会计恒等式误差存在重尾极端值
+## MAJOR-003: Numeric columns contain positive infinity values
 
-- 状态: open
-- 发现时间: 2026-06-09
-- 证据: `results/tables/accounting_identity_summary.csv`, `figures/fig07_accounting_identity_error.png`
-- 结果: 历史季度 `assets - liabilities - equity` 的相对误差中位数多为 0，但均值受极端值明显影响。
-- 影响: 后续若做会计一致性后处理，不能直接依赖均值类指标，应使用稳健分位数和 OOF 验证。
+- Status: mitigated in current baseline code; keep open for future model code.
+- Found: 2026-06-09
+- Evidence: `results/data_audit.json`, `results/tables/numeric_extreme_summary.csv`, `src/feature_engineering.py`
+- Result: train contains 13 `+inf` values and test contains 4 `+inf` values; no `-inf` values found.
+- Impact: scalers, linear models, and some tree models can fail unless `inf` is treated as missing.
+- Handling: current baseline and grouping code converts `+/-inf` to `NaN`. The same entry-point rule must be used for feature-engineered ML models.
 
-## MAJOR-003: 数值列存在正无穷值
+## MAJOR-004: Equity target remains weak under rule baselines
 
-- 状态: open
-- 发现时间: 2026-06-09
-- 证据: `results/data_audit.json`, `results/tables/numeric_extreme_summary.csv`
-- 结果: 训练集发现 13 个 `+inf`，测试集发现 4 个 `+inf`，未发现 `-inf`。
-- 影响: 直接进入缩放器、线性模型或部分树模型会产生异常；相关性审计已先将 `inf` 视为缺失。
-- 处理原则: 后续特征工程入口统一将 `±inf` 转为 `NaN`，再按折内拟合的预处理策略处理。
+- Status: open
+- Found: 2026-06-09
+- Evidence: `results/tables/baseline_scores.csv`
+- Result: best rule baseline B4 reaches mean OOF R2 `0.7830834896750798`, but `Q0_TOTAL_STOCKHOLDERS_EQUITY` remains negative at `-0.05296033455914251`.
+- Impact: the final model needs feature engineering and supervised learning for this target; a strong average score can hide this weak target.
+- Handling: next modeling stage must report per-target scores and not optimize only the average.
+
+## MINOR-001: Accounting identity error has heavy-tailed outliers
+
+- Status: open
+- Found: 2026-06-09
+- Evidence: `results/tables/accounting_identity_summary.csv`, `figures/fig07_accounting_identity_error.png`
+- Result: historical `assets - liabilities - equity` relative error has median near 0 in many quarters, but means are heavily influenced by extreme values.
+- Impact: accounting-consistency postprocessing must be evaluated on OOF with robust summaries, not raw mean error alone.
+

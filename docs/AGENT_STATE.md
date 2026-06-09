@@ -1,18 +1,32 @@
 # AGENT_STATE
 
-- 当前阶段: 第一阶段完成 - 环境审计、输入冻结、数据审计与 EDA 已完成。
-- 最近一次成功命令: `conda run -n QuantEnv python scripts/audit_data.py`
-- 当前最佳 OOF 平均 R²: N/A，尚未开始建模实验。
-- 当前最佳实验编号: N/A
-- 尚未解决的 BLOCKER: 无。
-- 尚未解决的 MAJOR: MAJOR-001 后续依赖缺失；MAJOR-002 重复特征分组风险；MAJOR-003 数值列存在正无穷值。
-- 下一步唯一动作: 在不使用测试集反馈的前提下，实现并运行 B0-B4 基线与 GroupKFold 分组验证。
-- 最近一次 Git commit: 本阶段已提交；以 `git log -1 --oneline` 为准。
+- Current phase: Baseline stage complete; entering feature engineering and model stage.
+- Last successful commands:
+  - `conda run -n QuantEnv python -m pytest -q`
+  - `conda run -n QuantEnv python scripts/run_baselines.py`
+- Current best OOF mean R2: `0.7830834896750798`
+- Current best experiment: `B4`
+- Open BLOCKER: none.
+- Open MAJOR issues:
+  - MAJOR-001: modeling/notebook dependencies still missing.
+  - MAJOR-002: identical feature rows require GroupKFold grouping.
+  - MAJOR-003: numeric `+inf` values must be converted to `NaN` at model entry points.
+  - MAJOR-004: `Q0_TOTAL_STOCKHOLDERS_EQUITY` remains weak under rule baselines.
+- Next single action: implement fold-safe feature engineering and run M1/M2 sklearn baselines before CatBoost.
+- Latest Git commit: use `git log -1 --oneline`.
 
-## 第一阶段输出
+## Completed Outputs
 
-- `results/environment_audit.json`
-- `results/input_manifest.json`
-- `results/data_audit.json`
-- `results/tables/*.csv`
-- `figures/fig01_sector_distribution.png` 至 `figures/fig08_target_correlation_heatmap.png`
+- Stage 1:
+  - `results/environment_audit.json`
+  - `results/input_manifest.json`
+  - `results/data_audit.json`
+  - `results/tables/*.csv`
+  - `figures/fig01_sector_distribution.png` to `figures/fig08_target_correlation_heatmap.png`
+- Baselines:
+  - `results/tables/baseline_scores.csv`
+  - `results/tables/baseline_blend_grid.csv`
+  - `results/oof/baseline_oof.csv`
+  - `results/cv_scores/b0.csv` to `results/cv_scores/b4.csv`
+  - `results/predictions/baseline_b4_test_predictions.csv`
+  - `configs/baseline_blend_weights.json`

@@ -1,0 +1,112 @@
+{
+  "Q0_TOTAL_ASSETS": {
+    "members": [
+      "B2"
+    ],
+    "weights": [
+      1.0
+    ],
+    "oof_r2": 0.5587405683214817,
+    "grid_step": 0.1
+  },
+  "Q0_TOTAL_LIABILITIES": {
+    "members": [
+      "B2"
+    ],
+    "weights": [
+      1.0
+    ],
+    "oof_r2": 0.861749312870751,
+    "grid_step": 0.1
+  },
+  "Q0_TOTAL_STOCKHOLDERS_EQUITY": {
+    "members": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "weights": [
+      0.0,
+      0.8,
+      0.2
+    ],
+    "oof_r2": -0.05296033455914251,
+    "grid_step": 0.1
+  },
+  "Q0_GROSS_PROFIT": {
+    "members": [
+      "B1"
+    ],
+    "weights": [
+      1.0
+    ],
+    "oof_r2": 0.9825808767600744,
+    "grid_step": 0.1
+  },
+  "Q0_COST_OF_REVENUES": {
+    "members": [
+      "B1",
+      "B2"
+    ],
+    "weights": [
+      0.9,
+      0.1
+    ],
+    "oof_r2": 0.9640167055770786,
+    "grid_step": 0.1
+  },
+  "Q0_REVENUES": {
+    "members": [
+      "B1",
+      "B2"
+    ],
+    "weights": [
+      0.9,
+      0.1
+    ],
+    "oof_r2": 0.9727981379517838,
+    "grid_step": 0.1
+  },
+  "Q0_OPERATING_INCOME": {
+    "members": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "weights": [
+      0.2,
+      0.3,
+      0.5
+    ],
+    "oof_r2": 0.8117222631369777,
+    "grid_step": 0.1
+  },
+  "Q0_OPERATING_EXPENSES": {
+    "members": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "weights": [
+      0.7,
+      0.2,
+      0.1
+    ],
+    "oof_r2": 0.9870948285268982,
+    "grid_step": 0.1
+  },
+  "Q0_EBITDA": {
+    "members": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "weights": [
+      0.5,
+      0.2,
+      0.3
+    ],
+    "oof_r2": 0.9620090484898162,
+    "grid_step": 0.1
+  }
+}

@@ -1,27 +1,37 @@
 # DECISIONS
 
-## 2026-06-09: 固定使用 QuantEnv
+## 2026-06-09: Use QuantEnv only
 
-- 自动化命令均使用 `conda run -n QuantEnv ...`。
-- 未创建 `.venv`，未使用 `base` 或系统 Python。
+- Automated commands use `conda run -n QuantEnv ...`.
+- No `.venv` was created.
+- `base` and system Python were not used for project automation.
 
-## 2026-06-09: 第一阶段不安装依赖
+## 2026-06-09: Freeze raw inputs before analysis
 
-- 环境审计发现若干后续依赖缺失。
-- 按用户要求，本阶段只记录缺失项，不批量安装或升级。
+- The five original files were hashed into `results/input_manifest.json`.
+- `scripts/bootstrap.py` stops if raw-file hashes differ from the previous manifest.
 
-## 2026-06-09: 输入文件只读冻结
+## 2026-06-09: Preserve sample submission order
 
-- 五个原始文件的 SHA256 已写入 `results/input_manifest.json`。
-- 后续运行 `scripts/bootstrap.py` 时如发现 SHA256 变化，将停止执行。
+- `sample_submission.csv` column order is the contract for final prediction files.
+- Metric code may use `TARGET_COLUMNS`, but submission writing must follow `SUBMISSION_COLUMNS`.
 
-## 2026-06-09: 提交列顺序以 sample_submission 为准
+## 2026-06-09: Group identical feature records for OOF
 
-- `sample_submission.csv` 列顺序已验证。
-- 后续 `submission.csv` 必须复制该列顺序，不能使用目标列表顺序重排。
+- Group IDs are built from non-target model features after converting `+/-inf` to `NaN`.
+- All current B0-B4 baselines use `GroupKFold(n_splits=5)`.
+- `tests/test_cv_no_leakage.py` verifies that groups do not cross train/validation folds.
 
-## 2026-06-09: 重复记录用 feature hash 分组
+## 2026-06-09: Install only immediate test dependencies
 
-- 数据审计发现 train/test 内部与跨集合存在完全相同 common-feature 记录。
-- 后续 CV 以稳定 common-feature hash 作为 `GroupKFold` 的 group。
+- Installed: `pytest`, `pytest-cov`.
+- Not installed yet: `catboost`, `xgboost`, `lightgbm`, `optuna`, `jupyter`.
+- Environment audit and lock files were regenerated after installation.
+
+## 2026-06-09: Select B4 as current best baseline
+
+- B4 is an OOF-selected per-target blend of B1/B2/B3 rule predictions.
+- Weight selection used only GroupKFold OOF predictions and training targets.
+- Current B4 OOF mean R2: `0.7830834896750798`.
+- The best baseline is not the final model; `Q0_TOTAL_STOCKHOLDERS_EQUITY` remains weak.
 

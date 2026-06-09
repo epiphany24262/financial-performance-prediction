@@ -1,7 +1,8 @@
 {
-  "status": "not_started",
-  "best_experiment_id": null,
-  "best_mean_oof_r2": null,
-  "notes": "Stage 1 completed; modeling experiments have not started."
+  "status": "baseline_complete",
+  "best_experiment_id": "B4",
+  "best_mean_oof_r2": 0.7830834896750798,
+  "best_fold_mean_r2_std": 0.1290854128624079,
+  "timestamp_utc": "2026-06-09T11:55:19.521227+00:00",
+  "notes": "Best current result among B0-B4 baselines only."
 }
-

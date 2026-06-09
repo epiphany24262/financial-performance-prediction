@@ -21,6 +21,7 @@ cloudpickle @ file:///C:/miniconda3/conda-bld/cloudpickle_1764930556434/work
 colorama @ file:///C:/b/abs_a9ozq0l032/croot/colorama_1672387194846/work
 comm @ file:///C:/miniconda3/conda-bld/comm_1763119233835/work
 contourpy @ file:///C:/b/abs_f2u2o_8s9g/croot/contourpy_1732540071787/work
+coverage==7.14.1
 cryptography==48.0.0
 curl_cffi==0.13.0
 cycler @ file:///C:/Users/task_176606795043471/croot/cycler_1766068055428/work
@@ -44,6 +45,7 @@ httpcore==1.0.9
 httpx==0.28.1
 idna==3.11
 index-constitution==0.6.1
+iniconfig==2.3.0
 ipykernel @ file:///C:/miniconda3/conda-bld/ipykernel_1762946093903/work
 ipython @ file:///C:/b/abs_8eyhzleyrk/croot/ipython_1734548134403/work
 ipython-genutils==0.2.0
@@ -118,6 +120,8 @@ pyparsing @ file:///C:/miniconda3/conda-bld/pyparsing_1763973898118/work
 pypdfium2==5.9.0
 PyQt6==6.7.1
 PyQt6_sip @ file:///C:/b/abs_25j3xlesmj/croot/pyqt-split_1753427295085/work/pyqt_sip
+pytest==9.0.3
+pytest-cov==7.1.0
 python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
 python-docx==1.2.0
 python-json-logger==4.1.0
