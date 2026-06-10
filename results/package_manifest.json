@@ -3,13 +3,13 @@
     "source_path": "D:\\PyCharm\\Quant\\financial-performance-prediction\\notebooks\\financial_performance_prediction_final.ipynb",
     "output_path": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\financial_performance_prediction_final.ipynb",
     "kernel_name": "quantenv",
-    "output_sha256": "d0f35d4bb65a735bf696dad8694c1cfcaa624160369a966d6d98d84b288c4e6b",
-    "cell_count": 14,
-    "executed_at_utc": "2026-06-10T06:34:28.041090+00:00"
+    "output_sha256": "c2eb9e5cfc81a86be4bf3ac6a8797110db5c5c22089392259feae0023462e60a",
+    "cell_count": 15,
+    "executed_at_utc": "2026-06-10T06:55:09.634176+00:00"
   },
   "report_sha256": "80b913f0f2ddf3cbb9a9738b3c9aa8958877548f5eb5b32d1e06bd608e1539f4",
   "report_pdf_sha256": "f7e57553ec36a09df73d3e9c581d82ca158f71f232ca07a8ad87e31f77ab61dd",
   "submission_sha256": "c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f",
-  "readme_sha256": "683a49188f45512dcc885831be63d5d81f3873c91ef2a492a1bb93a560ca405f",
-  "generated_utc": "2026-06-10T06:34:28.125585+00:00"
+  "readme_sha256": "a73730b003b745a3c7a3b911b17aad7df72433ad6ce85530d4a16b74b7a82c5f",
+  "generated_utc": "2026-06-10T06:55:09.687890+00:00"
 }

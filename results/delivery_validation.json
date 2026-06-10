@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "timestamp_utc": "2026-06-10T06:35:08.881542+00:00",
+  "timestamp_utc": "2026-06-10T06:55:42.886993+00:00",
   "checks": [
     {
       "name": "environment_name",
@@ -98,6 +98,11 @@
       "details": "Executed notebook must exist"
     },
     {
+      "name": "source_notebook_exists",
+      "passed": true,
+      "details": "Source notebook must exist"
+    },
+    {
       "name": "report_exists",
       "passed": true,
       "details": "Report DOCX must exist"
@@ -111,6 +116,21 @@
       "name": "readme_exists",
       "passed": true,
       "details": "README must exist"
+    },
+    {
+      "name": "source_notebook_self_bootstrap",
+      "passed": true,
+      "details": "Source notebook must be able to generate missing project artifacts before displaying results"
+    },
+    {
+      "name": "source_notebook_rebuilds_models_and_figures",
+      "passed": true,
+      "details": "Source notebook must include model and figure rebuild steps"
+    },
+    {
+      "name": "source_notebook_kernel",
+      "passed": true,
+      "details": "Source notebook kernelspec must point to Python (QuantEnv)"
     },
     {
       "name": "notebook_sha",
@@ -203,5 +223,5 @@
   "final_submission_sha256": "c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f",
   "report_sha256": "80b913f0f2ddf3cbb9a9738b3c9aa8958877548f5eb5b32d1e06bd608e1539f4",
   "report_pdf_sha256": "f7e57553ec36a09df73d3e9c581d82ca158f71f232ca07a8ad87e31f77ab61dd",
-  "notebook_sha256": "d0f35d4bb65a735bf696dad8694c1cfcaa624160369a966d6d98d84b288c4e6b"
+  "notebook_sha256": "c2eb9e5cfc81a86be4bf3ac6a8797110db5c5c22089392259feae0023462e60a"
 }

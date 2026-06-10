@@ -67,15 +67,16 @@ def build_environment_audit() -> dict:
         if version is None:
             missing_packages.append(package_name)
 
-    python_version = _run_command(["python", "--version"])
+    python = str(Path(sys.executable).resolve())
+    python_version = _run_command([python, "--version"])
     conda_version = _run_command(["conda", "--version"])
-    pip_version = _run_command(["python", "-m", "pip", "--version"])
+    pip_version = _run_command([python, "-m", "pip", "--version"])
     conda_env_list = _run_command(["conda", "env", "list"]) or ""
 
     return {
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "conda_environment_name": "QuantEnv",
-        "python_executable": _run_command(["python", "-c", "import sys; print(sys.executable)"]),
+        "python_executable": python,
         "python_version": python_version,
         "platform": platform.platform(),
         "system": platform.system(),
@@ -86,7 +87,7 @@ def build_environment_audit() -> dict:
         "installed_versions": installed_versions,
         "missing_packages": missing_packages,
         "conda_env_list_contains_quantenv": "QuantEnv" in conda_env_list,
-        "active_path_hint_contains_quantenv": "QuantEnv" in (_run_command(["python", "-c", "import sys; print(sys.executable)"]) or ""),
+        "active_path_hint_contains_quantenv": "quantenv" in python.lower(),
     }
 
 

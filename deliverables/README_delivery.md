@@ -17,7 +17,7 @@
 - 说明.docx | c4e71f313214b7fe2fe1542d53a58ad75621e2f09875d501c18184e247819db6
 
 ## Deliverables
-- financial_performance_prediction_final.ipynb | d0f35d4bb65a735bf696dad8694c1cfcaa624160369a966d6d98d84b288c4e6b
+- financial_performance_prediction_final.ipynb | c2eb9e5cfc81a86be4bf3ac6a8797110db5c5c22089392259feae0023462e60a
 - financial_performance_prediction_report.docx | 80b913f0f2ddf3cbb9a9738b3c9aa8958877548f5eb5b32d1e06bd608e1539f4
 - financial_performance_prediction_report.pdf | f7e57553ec36a09df73d3e9c581d82ca158f71f232ca07a8ad87e31f77ab61dd
 - submission.csv | c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f
@@ -41,6 +41,6 @@ conda run -n QuantEnv python scripts/validate_delivery.py
 
 ## Notes
 - Notebook kernel name: quantenv
-- Notebook cells: 14
+- Notebook cells: 15
 - Report manifest generated at: 2026-06-10T06:28:19.916353+00:00
 - Submission manifest generated at: 2026-06-10T05:03:10.637960+00:00

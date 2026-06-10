@@ -74,13 +74,36 @@ def main() -> None:
     _check(sha256_file(REQUIRED_DELIVERABLES["submission"]) == final_manifest["submission_sha256"], "submission_sha", "Submission sha must match manifest", checks)
 
     notebook_path = REQUIRED_DELIVERABLES["notebook"]
+    source_notebook_path = ROOT / "notebooks" / "financial_performance_prediction_final.ipynb"
     report_path = REQUIRED_DELIVERABLES["report"]
     report_pdf_path = REQUIRED_DELIVERABLES["report_pdf"]
     readme_path = REQUIRED_DELIVERABLES["readme"]
     _check(notebook_path.exists(), "notebook_exists", "Executed notebook must exist", checks)
+    _check(source_notebook_path.exists(), "source_notebook_exists", "Source notebook must exist", checks)
     _check(report_path.exists(), "report_exists", "Report DOCX must exist", checks)
     _check(report_pdf_path.exists(), "report_pdf_exists", "Report PDF preview must exist", checks)
     _check(readme_path.exists(), "readme_exists", "README must exist", checks)
+
+    source_nb = nbf.read(str(source_notebook_path), as_version=4)
+    source_text = "\n".join(str(cell.get("source", "")) for cell in source_nb.cells)
+    _check(
+        "def ensure_artifacts" in source_text and "scripts/train_final.py" in source_text,
+        "source_notebook_self_bootstrap",
+        "Source notebook must be able to generate missing project artifacts before displaying results",
+        checks,
+    )
+    _check(
+        "scripts/run_catboost_models.py" in source_text and "scripts/build_final_figures.py" in source_text,
+        "source_notebook_rebuilds_models_and_figures",
+        "Source notebook must include model and figure rebuild steps",
+        checks,
+    )
+    _check(
+        source_nb.metadata.get("kernelspec", {}).get("display_name") == "Python (QuantEnv)",
+        "source_notebook_kernel",
+        "Source notebook kernelspec must point to Python (QuantEnv)",
+        checks,
+    )
 
     _check(sha256_file(notebook_path) == notebook_manifest["output_sha256"], "notebook_sha", "Notebook sha must match manifest", checks)
     _check(sha256_file(report_path) == report_manifest["report_sha256"], "report_sha", "Report sha must match manifest", checks)
