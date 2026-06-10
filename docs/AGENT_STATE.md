@@ -1,19 +1,22 @@
 # AGENT_STATE
 
-- Current phase: Final delivery complete; all gates passed.
+- Current phase: Final delivery complete after M3a-M3d metadata ablation; all gates passed.
 - Last successful commands:
-  - `conda run -n QuantEnv python -m compileall src scripts tests -q`
+  - `conda run -n QuantEnv python scripts/run_catboost_models.py M3a_catboost_direct_history_raw M3b_catboost_direct_history_industry M3c_catboost_direct_history_metadata M3d_catboost_direct_history_metadata_engineered`
+  - `conda run -n QuantEnv python scripts/train_final.py`
+  - `conda run -n QuantEnv python scripts/build_final_figures.py`
+  - `conda run -n QuantEnv python scripts/build_notebook.py`
+  - `conda run -n QuantEnv python scripts/build_report.py`
+  - `conda run -n QuantEnv python scripts/export_report_pdf.py`
+  - `conda run -n QuantEnv python scripts/package_delivery.py`
   - `conda run -n QuantEnv python -m pytest -q`
   - `conda run -n QuantEnv python scripts/validate_delivery.py`
 - Current best OOF mean R2: `0.8572266051577525` from M6 OOF blend
 - Current best experiment: `M6_oof_blend`
 - Open BLOCKER: none.
-- Open MAJOR issues:
-  - MAJOR-001: optional comparison/notebook dependencies remain uninstalled (`xgboost`, `lightgbm`, `optuna`, `jupyter`).
-  - MAJOR-002: identical feature rows are already grouped in current CV code; keep the safeguard for future extensions.
-  - MAJOR-003: numeric `+inf` values are already converted to `NaN` at model entry points; keep the safeguard for future extensions.
+- Open MAJOR issues: none blocking. MAJOR-001 remains an accepted limitation for unused optional packages (`xgboost`, `lightgbm`, `optuna`, `jupyter`).
 - Next single action: none.
-- Latest delivery commit: `9c3b92c feat: complete final blend and delivery package`
+- Latest validated delivery commit before metadata-ablation update: `9c3b92c feat: complete final blend and delivery package`
 
 ## Completed Outputs
 
@@ -42,13 +45,25 @@
   - `results/predictions/m2_hgb_history_raw_test_predictions.csv`
 - CatBoost models:
   - `results/tables/catboost_model_scores.csv`
-  - `results/tables/M3_catboost_direct_history_metadata_engineered_scores.csv`
+  - `results/tables/M3a_catboost_direct_history_raw_scores.csv`
+  - `results/tables/M3b_catboost_direct_history_industry_scores.csv`
+  - `results/tables/M3c_catboost_direct_history_metadata_scores.csv`
+  - `results/tables/M3d_catboost_direct_history_metadata_engineered_scores.csv`
   - `results/tables/M4_catboost_residual_history_metadata_engineered_scores.csv`
-  - `results/oof/m3_catboost_direct_history_metadata_engineered.csv`
+  - `results/oof/m3a_catboost_direct_history_raw.csv`
+  - `results/oof/m3b_catboost_direct_history_industry.csv`
+  - `results/oof/m3c_catboost_direct_history_metadata.csv`
+  - `results/oof/m3d_catboost_direct_history_metadata_engineered.csv`
   - `results/oof/m4_catboost_residual_history_metadata_engineered.csv`
-  - `results/cv_scores/m3_catboost_direct_history_metadata_engineered.csv`
+  - `results/cv_scores/m3a_catboost_direct_history_raw.csv`
+  - `results/cv_scores/m3b_catboost_direct_history_industry.csv`
+  - `results/cv_scores/m3c_catboost_direct_history_metadata.csv`
+  - `results/cv_scores/m3d_catboost_direct_history_metadata_engineered.csv`
   - `results/cv_scores/m4_catboost_residual_history_metadata_engineered.csv`
-  - `results/predictions/m3_catboost_direct_history_metadata_engineered_test_predictions.csv`
+  - `results/predictions/m3a_catboost_direct_history_raw_test_predictions.csv`
+  - `results/predictions/m3b_catboost_direct_history_industry_test_predictions.csv`
+  - `results/predictions/m3c_catboost_direct_history_metadata_test_predictions.csv`
+  - `results/predictions/m3d_catboost_direct_history_metadata_engineered_test_predictions.csv`
   - `results/predictions/m4_catboost_residual_history_metadata_engineered_test_predictions.csv`
 - Final delivery:
   - `deliverables/financial_performance_prediction_final.ipynb`

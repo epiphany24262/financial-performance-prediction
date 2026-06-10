@@ -55,3 +55,19 @@ def test_build_feature_frame_excludes_targets_and_replaces_inf():
     assert not np.isinf(features.select_dtypes(include=[np.number]).to_numpy()).any()
     assert "hist_REVENUES_mean_last_4" in features.columns
     assert "chg_REVENUES_q1_minus_q2" in features.columns
+
+
+def test_feature_sets_support_metadata_ablation():
+    frame = pd.read_csv("train.csv")
+
+    raw = build_feature_frame(frame, feature_set="history_raw")
+    industry = build_feature_frame(frame, feature_set="history_industry")
+    metadata = build_feature_frame(frame, feature_set="history_metadata")
+    engineered = build_feature_frame(frame, feature_set="history_metadata_engineered")
+
+    assert "industry" not in raw.columns
+    assert "industry" in industry.columns
+    assert "sector" in industry.columns
+    assert "recommendationKey" in metadata.columns
+    assert "hist_REVENUES_mean_last_4" not in metadata.columns
+    assert "hist_REVENUES_mean_last_4" in engineered.columns

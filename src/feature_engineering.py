@@ -59,6 +59,14 @@ def raw_history_feature_columns(frame: pd.DataFrame) -> list[str]:
     return [*historical_fiscal_columns(frame), *historical_value_columns(frame)]
 
 
+def industry_feature_columns(frame: pd.DataFrame) -> list[str]:
+    return [col for col in ["industry", "sector"] if col in frame.columns]
+
+
+def metadata_feature_columns(frame: pd.DataFrame) -> list[str]:
+    return [col for col in METADATA_COLUMNS if col in frame.columns]
+
+
 def historical_matrix(frame: pd.DataFrame, target: str) -> pd.DataFrame:
     cols = historical_columns_for_target(target)
     missing = [col for col in cols if col not in frame.columns]
@@ -209,12 +217,21 @@ def build_feature_frame(
 ) -> pd.DataFrame:
     """Build deterministic features without fitting on validation or test data."""
     source = replace_inf_with_nan(frame.copy())
-    if feature_set not in {"history_raw", "history_engineered", "history_metadata_engineered"}:
+    allowed_feature_sets = {
+        "history_raw",
+        "history_industry",
+        "history_metadata",
+        "history_engineered",
+        "history_metadata_engineered",
+    }
+    if feature_set not in allowed_feature_sets:
         raise ValueError(f"Unknown feature_set: {feature_set}")
 
     base_cols = raw_history_feature_columns(source)
-    if feature_set == "history_metadata_engineered":
-        base_cols = [*base_cols, *[col for col in METADATA_COLUMNS if col in source.columns]]
+    if feature_set == "history_industry":
+        base_cols = [*base_cols, *industry_feature_columns(source)]
+    elif feature_set in {"history_metadata", "history_metadata_engineered"}:
+        base_cols = [*base_cols, *metadata_feature_columns(source)]
     features = source.loc[:, base_cols].copy()
 
     if feature_set in {"history_engineered", "history_metadata_engineered"}:

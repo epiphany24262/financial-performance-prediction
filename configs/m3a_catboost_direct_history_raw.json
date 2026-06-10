@@ -1,0 +1,30 @@
+{
+  "experiment_id": "M3a_catboost_direct_history_raw",
+  "model_name": "CatBoostRegressor",
+  "mode": "direct",
+  "feature_set": "history_raw",
+  "baseline_reference": null,
+  "timestamp_utc": "2026-06-10T04:40:22.730128+00:00",
+  "catboost_params": {
+    "loss_function": "RMSE",
+    "iterations": 180,
+    "learning_rate": 0.03,
+    "depth": 4,
+    "l2_leaf_reg": 8.0,
+    "random_seed": 42,
+    "od_type": "Iter",
+    "od_wait": 20,
+    "use_best_model": true
+  },
+  "best_iterations": [
+    176,
+    179,
+    180,
+    180,
+    180,
+    180,
+    180,
+    180,
+    180
+  ]
+}

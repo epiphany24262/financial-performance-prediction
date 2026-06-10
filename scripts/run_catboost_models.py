@@ -25,23 +25,43 @@ from src.models import prepare_catboost_frame
 from src.validation import validate_schema
 
 
-FEATURE_SET = "history_metadata_engineered"
 BASELINE_OOF_PATH = ROOT / "results" / "oof" / "baseline_oof.csv"
 BASELINE_TEST_PATH = ROOT / "results" / "predictions" / "baseline_b4_test_predictions.csv"
 
 EXPERIMENTS = [
     {
-        "experiment_id": "M3_catboost_direct_history_metadata_engineered",
+        "experiment_id": "M3a_catboost_direct_history_raw",
         "model_name": "CatBoostRegressor",
         "mode": "direct",
-        "feature_set": FEATURE_SET,
+        "feature_set": "history_raw",
+        "baseline_reference": None,
+    },
+    {
+        "experiment_id": "M3b_catboost_direct_history_industry",
+        "model_name": "CatBoostRegressor",
+        "mode": "direct",
+        "feature_set": "history_industry",
+        "baseline_reference": None,
+    },
+    {
+        "experiment_id": "M3c_catboost_direct_history_metadata",
+        "model_name": "CatBoostRegressor",
+        "mode": "direct",
+        "feature_set": "history_metadata",
+        "baseline_reference": None,
+    },
+    {
+        "experiment_id": "M3d_catboost_direct_history_metadata_engineered",
+        "model_name": "CatBoostRegressor",
+        "mode": "direct",
+        "feature_set": "history_metadata_engineered",
         "baseline_reference": None,
     },
     {
         "experiment_id": "M4_catboost_residual_history_metadata_engineered",
         "model_name": "CatBoostRegressor",
         "mode": "residual",
-        "feature_set": FEATURE_SET,
+        "feature_set": "history_metadata_engineered",
         "baseline_reference": "B4",
     },
 ]
@@ -63,7 +83,7 @@ CATBOOST_BASE_PARAMS = {
 
 
 def _selected_experiments() -> list[dict]:
-    raw = os.getenv("CATBOOST_EXPERIMENT_IDS", "").strip()
+    raw = ",".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else os.getenv("CATBOOST_EXPERIMENT_IDS", "").strip()
     if not raw:
         return EXPERIMENTS
     wanted = {item.strip() for item in raw.split(",") if item.strip()}

@@ -24,13 +24,13 @@ from src.validation import validate_schema
 
 OOF_SPECS = {
     "B4": ROOT / "results" / "oof" / "baseline_oof.csv",
-    "M3": ROOT / "results" / "oof" / "m3_catboost_direct_history_metadata_engineered.csv",
+    "M3d": ROOT / "results" / "oof" / "m3d_catboost_direct_history_metadata_engineered.csv",
     "M4": ROOT / "results" / "oof" / "m4_catboost_residual_history_metadata_engineered.csv",
 }
 
 TEST_SPECS = {
     "B4": ROOT / "results" / "predictions" / "baseline_b4_test_predictions.csv",
-    "M3": ROOT / "results" / "predictions" / "m3_catboost_direct_history_metadata_engineered_test_predictions.csv",
+    "M3d": ROOT / "results" / "predictions" / "m3d_catboost_direct_history_metadata_engineered_test_predictions.csv",
     "M4": ROOT / "results" / "predictions" / "m4_catboost_residual_history_metadata_engineered_test_predictions.csv",
 }
 
@@ -256,7 +256,7 @@ def main() -> None:
     validate_prediction_frame(final_test)
 
     runtime_seconds = time.perf_counter() - start
-    m6_notes = "Per-target OOF blend of B4, M3, and M4; weights selected on OOF only."
+    m6_notes = "Per-target OOF blend of B4, M3d, and M4; weights selected on OOF only."
     m7_notes = f"OOF-selected accounting adjustment: {best_adjustment}."
     m6_summary = _summary_row(
         "M6_oof_blend",

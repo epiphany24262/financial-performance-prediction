@@ -2,7 +2,7 @@
   "experiment_id": "M6_oof_blend",
   "members": [
     "B4",
-    "M3",
+    "M3d",
     "M4"
   ],
   "selection": "per_target_oof_r2",
@@ -10,7 +10,7 @@
     "Q0_TOTAL_ASSETS": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -26,7 +26,7 @@
     "Q0_TOTAL_LIABILITIES": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -42,7 +42,7 @@
     "Q0_TOTAL_STOCKHOLDERS_EQUITY": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -58,7 +58,7 @@
     "Q0_GROSS_PROFIT": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -74,7 +74,7 @@
     "Q0_COST_OF_REVENUES": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -90,7 +90,7 @@
     "Q0_REVENUES": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -106,7 +106,7 @@
     "Q0_OPERATING_INCOME": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -122,7 +122,7 @@
     "Q0_OPERATING_EXPENSES": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -138,7 +138,7 @@
     "Q0_EBITDA": {
       "members": [
         "B4",
-        "M3",
+        "M3d",
         "M4"
       ],
       "weights": [
@@ -152,5 +152,5 @@
       "fine_radius": 0.05
     }
   },
-  "timestamp_utc": "2026-06-09T15:07:14.272808+00:00"
+  "timestamp_utc": "2026-06-10T05:03:10.588820+00:00"
 }
