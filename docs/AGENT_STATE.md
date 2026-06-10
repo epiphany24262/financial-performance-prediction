@@ -1,6 +1,6 @@
 # AGENT_STATE
 
-- Current phase: Final validation passed; preparing final delivery commit.
+- Current phase: Final delivery complete; all gates passed.
 - Last successful commands:
   - `conda run -n QuantEnv python -m compileall src scripts tests -q`
   - `conda run -n QuantEnv python -m pytest -q`
@@ -12,8 +12,8 @@
   - MAJOR-001: optional comparison/notebook dependencies remain uninstalled (`xgboost`, `lightgbm`, `optuna`, `jupyter`).
   - MAJOR-002: identical feature rows are already grouped in current CV code; keep the safeguard for future extensions.
   - MAJOR-003: numeric `+inf` values are already converted to `NaN` at model entry points; keep the safeguard for future extensions.
-- Next single action: commit final delivery artifacts and report the verification result.
-- Latest Git commit: `8dece49 feat: add grouped baselines and pytest checks`
+- Next single action: none.
+- Latest delivery commit: `9c3b92c feat: complete final blend and delivery package`
 
 ## Completed Outputs
 
