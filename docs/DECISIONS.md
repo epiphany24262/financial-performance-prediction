@@ -90,3 +90,13 @@
 - `xgboost`, `lightgbm`, `optuna`, and top-level `jupyter` remain absent from `QuantEnv`.
 - The final accepted route does not use these packages; `nbconvert`, `nbformat`, and `ipykernel` are installed and validated.
 - This avoids extra environment churn while preserving a reproducible final submission.
+
+## 2026-06-10: Rewrite report as Chinese brokerage-style research report
+
+- User requested a Chinese report with depth similar to domestic brokerage research and format reference from `D:/PyCharm/Quant/consume_bonus`.
+- `scripts/build_report.py` now generates a Chinese DOCX with cover page, TOC field, header/footer, page numbers, Chinese section hierarchy, numbered tables, figure notes, and source notes.
+- The report structure is now: executive summary, data/task audit, EDA, modeling route, OOF fusion, accounting postprocess, reproducibility/risk, conclusion.
+- All report numbers are still read from `results/`, `figures/`, and JSON manifests; no reported metrics were hand-edited in the DOCX.
+- Final model figures were relabeled in Chinese and shortened to avoid long experiment IDs in the report.
+- `scripts/export_report_pdf.py` now clears stale preview images before rendering the current PDF pages.
+- `scripts/validate_delivery.py` accepts the Chinese title and checks the report title across the cover text instead of assuming the title is the first paragraph.

@@ -1,22 +1,20 @@
 # AGENT_STATE
 
-- Current phase: Final delivery complete after M3a-M3d metadata ablation; all gates passed.
+- Current phase: Chinese brokerage-style report rewrite complete; all gates passed.
 - Last successful commands:
-  - `conda run -n QuantEnv python scripts/run_catboost_models.py M3a_catboost_direct_history_raw M3b_catboost_direct_history_industry M3c_catboost_direct_history_metadata M3d_catboost_direct_history_metadata_engineered`
-  - `conda run -n QuantEnv python scripts/train_final.py`
   - `conda run -n QuantEnv python scripts/build_final_figures.py`
-  - `conda run -n QuantEnv python scripts/build_notebook.py`
   - `conda run -n QuantEnv python scripts/build_report.py`
   - `conda run -n QuantEnv python scripts/export_report_pdf.py`
   - `conda run -n QuantEnv python scripts/package_delivery.py`
-  - `conda run -n QuantEnv python -m pytest -q`
   - `conda run -n QuantEnv python scripts/validate_delivery.py`
+  - `conda run -n QuantEnv python -m compileall src scripts tests -q`
+  - `conda run -n QuantEnv python -m pytest -q`
 - Current best OOF mean R2: `0.8572266051577525` from M6 OOF blend
 - Current best experiment: `M6_oof_blend`
 - Open BLOCKER: none.
 - Open MAJOR issues: none blocking. MAJOR-001 remains an accepted limitation for unused optional packages (`xgboost`, `lightgbm`, `optuna`, `jupyter`).
 - Next single action: none.
-- Latest validated delivery commit before metadata-ablation update: `9c3b92c feat: complete final blend and delivery package`
+- Latest validated delivery commit before Chinese report rewrite: `9e302dc feat: add metadata ablation and refresh delivery`
 
 ## Completed Outputs
 
@@ -67,7 +65,7 @@
   - `results/predictions/m4_catboost_residual_history_metadata_engineered_test_predictions.csv`
 - Final delivery:
   - `deliverables/financial_performance_prediction_final.ipynb`
-  - `deliverables/financial_performance_prediction_report.docx`
-  - `deliverables/financial_performance_prediction_report.pdf`
+  - `deliverables/financial_performance_prediction_report.docx` (Chinese brokerage-style version)
+  - `deliverables/financial_performance_prediction_report.pdf` (15 pages, previewed pages 1/3/15)
   - `deliverables/README_delivery.md`
   - `deliverables/submission.csv`

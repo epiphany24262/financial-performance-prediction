@@ -97,7 +97,14 @@ def main() -> None:
     _check(len(report_doc.paragraphs) > 10, "report_paragraphs", "Report should contain multiple paragraphs", checks)
     _check(len(report_doc.tables) >= 5, "report_tables", "Report should contain multiple tables", checks)
     _check(len(report_doc.inline_shapes) >= 8, "report_figures", "Report should embed the key figures", checks)
-    _check("Financial Performance Prediction Report" in report_doc.paragraphs[0].text, "report_title", "Report title should be present", checks)
+    report_text_head = "\n".join(paragraph.text for paragraph in report_doc.paragraphs[:20])
+    _check(
+        "财务绩效预测研究报告" in report_text_head
+        or "Financial Performance Prediction Report" in report_text_head,
+        "report_title",
+        "Report title should be present",
+        checks,
+    )
 
     _execute_notebook(ROOT / "notebooks" / "financial_performance_prediction_final.ipynb", kernel_name=notebook_manifest["kernel_name"])
 

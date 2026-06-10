@@ -34,6 +34,10 @@ def main() -> None:
         raise FileNotFoundError("No score tables found for final figures")
     scores = pd.concat(frames, ignore_index=True)
     scores = scores.drop_duplicates(subset=["experiment_id"], keep="last")
+    if "M3d_catboost_direct_history_metadata_engineered" in set(scores["experiment_id"]):
+        scores = scores[
+            scores["experiment_id"] != "M3_catboost_direct_history_metadata_engineered"
+        ].copy()
     write_csv(ROOT / "results" / "tables" / "all_model_scores.csv", scores)
 
     figures = ROOT / "figures"

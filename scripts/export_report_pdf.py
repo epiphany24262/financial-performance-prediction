@@ -38,6 +38,8 @@ def export_docx_to_pdf(docx_path: Path, pdf_path: Path) -> None:
 
 def render_preview_pages(pdf_path: Path) -> list[str]:
     PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
+    for old_preview in PREVIEW_DIR.glob("report_page_*.png"):
+        old_preview.unlink()
     document = fitz.open(str(pdf_path))
     page_indices = sorted({0, min(2, document.page_count - 1), document.page_count - 1})
     rendered = []
@@ -59,7 +61,10 @@ def validate_pdf(pdf_path: Path) -> dict:
         "pdf_path": str(pdf_path.relative_to(ROOT)),
         "pdf_sha256": sha256_file(pdf_path),
         "page_count": page_count,
-        "first_page_has_title": "Financial Performance Prediction Report" in first_text,
+        "first_page_has_title": (
+            "财务绩效预测研究报告" in first_text
+            or "Financial Performance Prediction Report" in first_text
+        ),
     }
 
 
