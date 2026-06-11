@@ -45,3 +45,9 @@ Thumbs.db
 /deliverables/financial_performance_prediction_final_executed.ipynb
 /deliverables/financial_performance_prediction_report.pdf
 /deliverables/figures/
+# Files excluded from version control per project requirements
+AGENTS.md
+/FINANCIAL_PERFORMANCE_PREDICTION_FINAL_REVISION_PROMPT.md
+/说明.docx
+/sample_submission.csv
+/tests/
