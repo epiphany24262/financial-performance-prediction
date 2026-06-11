@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-06-11T09:09:26.945074+00:00",
+  "generated_utc": "2026-06-11T10:30:02.295441+00:00",
   "notebook_sha256": "d41c9e62c31ba199dc0cf0d3fad9c2f37051a886e9e6b5ca5dd1d318f853c760",
   "executed_notebook_sha256": "d41c9e62c31ba199dc0cf0d3fad9c2f37051a886e9e6b5ca5dd1d318f853c760",
-  "report_sha256": "d9eabc4c2ababf6b1eb04fbfb8d71c7597911be37f3f8f2bc2ff9f1441ec6619",
-  "report_pdf_sha256": "fdc7bbc9b77f98943cca24d166b97b14d495254404ddeafc36c2221c3a9cc8b9",
+  "report_sha256": "b2bd265db3af85f6b0eb5b5105ad45f6d30eeee659644eaf1988a0531a7738ec",
+  "report_pdf_sha256": "78f2a66ab802aa6c5387eaf76bb0542061c2a24b728b1000c08aad2803a936e0",
   "submission_sha256": "4e85827620e50ca5874184ccf5bfdbcf96cc880149f0b54a17b2b237f5cf1705",
-  "readme_sha256": "66426307d8a2eb574c3d3d20e71a11aa98a2437b04ee3e0ab77f8618729c0bd3",
+  "readme_sha256": "626096b31024bd386db4031f4dfeda7708204dbab5b9569e219727551c0af4b2",
   "deliverables": [
     "deliverables\\financial_performance_prediction_final.ipynb",
     "deliverables\\financial_performance_prediction_report.docx",
@@ -23,8 +23,8 @@
     {
       "path": "final_submission\\financial_performance_prediction_report.docx",
       "source": "deliverables\\financial_performance_prediction_report.docx",
-      "size_bytes": 3098673,
-      "sha256": "d9eabc4c2ababf6b1eb04fbfb8d71c7597911be37f3f8f2bc2ff9f1441ec6619"
+      "size_bytes": 3098011,
+      "sha256": "b2bd265db3af85f6b0eb5b5105ad45f6d30eeee659644eaf1988a0531a7738ec"
     },
     {
       "path": "final_submission\\submission.csv",
