@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "timestamp_utc": "2026-06-11T10:30:25.373892+00:00",
+  "timestamp_utc": "2026-06-11T10:47:40.758114+00:00",
   "checks": [
     {
       "name": "exists:financial_performance_prediction_final.ipynb",
@@ -597,8 +597,8 @@
   "best_mean_oof_r2": 0.7896678489613664,
   "nested_mean_oof_r2": 0.75983867877668,
   "final_submission_sha256": "4e85827620e50ca5874184ccf5bfdbcf96cc880149f0b54a17b2b237f5cf1705",
-  "report_sha256": "b2bd265db3af85f6b0eb5b5105ad45f6d30eeee659644eaf1988a0531a7738ec",
-  "report_pdf_sha256": "78f2a66ab802aa6c5387eaf76bb0542061c2a24b728b1000c08aad2803a936e0",
+  "report_sha256": "21f6fef0edc321046dc323d18754005f3b45a6c125736ef11d86a54c7241aaa1",
+  "report_pdf_sha256": "e03590921aaeeb26904726fe2d253229b19f8e8794f660240550e69848ea5aad",
   "notebook_sha256": "d41c9e62c31ba199dc0cf0d3fad9c2f37051a886e9e6b5ca5dd1d318f853c760",
   "executed_notebook_sha256": "d41c9e62c31ba199dc0cf0d3fad9c2f37051a886e9e6b5ca5dd1d318f853c760"
 }
