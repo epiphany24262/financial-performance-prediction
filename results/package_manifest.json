@@ -1,15 +1,36 @@
 {
-  "notebook": {
-    "source_path": "D:\\PyCharm\\Quant\\financial-performance-prediction\\notebooks\\financial_performance_prediction_final.ipynb",
-    "output_path": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\financial_performance_prediction_final.ipynb",
-    "kernel_name": "quantenv",
-    "output_sha256": "c2eb9e5cfc81a86be4bf3ac6a8797110db5c5c22089392259feae0023462e60a",
-    "cell_count": 15,
-    "executed_at_utc": "2026-06-10T06:55:09.634176+00:00"
-  },
-  "report_sha256": "80b913f0f2ddf3cbb9a9738b3c9aa8958877548f5eb5b32d1e06bd608e1539f4",
-  "report_pdf_sha256": "f7e57553ec36a09df73d3e9c581d82ca158f71f232ca07a8ad87e31f77ab61dd",
-  "submission_sha256": "c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f",
-  "readme_sha256": "a73730b003b745a3c7a3b911b17aad7df72433ad6ce85530d4a16b74b7a82c5f",
-  "generated_utc": "2026-06-10T06:55:09.687890+00:00"
+  "generated_utc": "2026-06-11T03:22:11.763211+00:00",
+  "notebook_sha256": "e2cd62b5248c3827fcfcf646929c7a353dbdbd1f45478c0be33247b1e415ef29",
+  "executed_notebook_sha256": "769745ffdbe5b1c5e71d4819fb0b18a7f929a855899490108531f18d2169e512",
+  "report_sha256": "530cb25c4b4858cc89461a86ba21622688b51225cd0b4da153aa7c6790858ed0",
+  "report_pdf_sha256": "28c3a5d9552b0b277d76c17328561f0e3d03ba4c5ae22b5447fd3a26136ed744",
+  "submission_sha256": "a488f55ba7c5254ed4490ee12c12d871a6275a9779d7b67fa28bbb8669515fd2",
+  "readme_sha256": "d93498b55b20166d95e75c52c4f7504fd894dbbbe17f62861a530db5d0765a5d",
+  "deliverables": [
+    "deliverables\\financial_performance_prediction_final.ipynb",
+    "deliverables\\financial_performance_prediction_report.docx",
+    "deliverables\\submission.csv",
+    "deliverables\\README_delivery.md"
+  ],
+  "minimal_submission_dir": "final_submission",
+  "minimal_submission_files": [
+    {
+      "path": "final_submission\\financial_performance_prediction_final.ipynb",
+      "source": "deliverables\\financial_performance_prediction_final.ipynb",
+      "size_bytes": 139308,
+      "sha256": "e2cd62b5248c3827fcfcf646929c7a353dbdbd1f45478c0be33247b1e415ef29"
+    },
+    {
+      "path": "final_submission\\financial_performance_prediction_report.docx",
+      "source": "deliverables\\financial_performance_prediction_report.docx",
+      "size_bytes": 1394544,
+      "sha256": "530cb25c4b4858cc89461a86ba21622688b51225cd0b4da153aa7c6790858ed0"
+    },
+    {
+      "path": "final_submission\\submission.csv",
+      "source": "deliverables\\submission.csv",
+      "size_bytes": 70202,
+      "sha256": "a488f55ba7c5254ed4490ee12c12d871a6275a9779d7b67fa28bbb8669515fd2"
+    }
+  ]
 }

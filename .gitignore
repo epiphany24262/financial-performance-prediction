@@ -1,9 +1,47 @@
+# Local Python / Conda environments
 .venv/
 .conda/
+env/
+venv/
+
+# Python cache and test cache
 __pycache__/
-.ipynb_checkpoints/
 .pytest_cache/
+*.py[cod]
+*$py.class
+
+# Jupyter local state
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# IDE / OS noise
 .vscode/
-*.pyc
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
 *.log
-results/models/
+*.tmp
+*.bak
+
+# Generated runtime sandboxes and submission aliases
+/standalone_check/
+/final_submission/
+/submission.csv
+/scripts/
+/docs/
+
+# Heavy or optional generated artifacts.
+# Keep only the minimal upload files tracked in deliverables/.
+/results/models/
+/results/report_pdf_preview/
+/deliverables/*
+!/deliverables/financial_performance_prediction_final.ipynb
+!/deliverables/financial_performance_prediction_report.docx
+!/deliverables/submission.csv
+
+# Local rendered previews; regenerate from scripts/export_report_pdf.py.
+/deliverables/financial_performance_prediction_final_executed.ipynb
+/deliverables/financial_performance_prediction_report.pdf
+/deliverables/figures/

@@ -1,81 +1,181 @@
 {
   "passed": true,
-  "timestamp_utc": "2026-06-10T06:55:42.886993+00:00",
+  "timestamp_utc": "2026-06-11T03:22:34.287688+00:00",
   "checks": [
+    {
+      "name": "exists:financial_performance_prediction_final.ipynb",
+      "passed": true,
+      "details": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\financial_performance_prediction_final.ipynb must exist"
+    },
+    {
+      "name": "exists:financial_performance_prediction_final_executed.ipynb",
+      "passed": true,
+      "details": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\financial_performance_prediction_final_executed.ipynb must exist"
+    },
+    {
+      "name": "exists:financial_performance_prediction_report.docx",
+      "passed": true,
+      "details": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\financial_performance_prediction_report.docx must exist"
+    },
+    {
+      "name": "exists:financial_performance_prediction_report.pdf",
+      "passed": true,
+      "details": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\financial_performance_prediction_report.pdf must exist"
+    },
+    {
+      "name": "exists:submission.csv",
+      "passed": true,
+      "details": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\submission.csv must exist"
+    },
+    {
+      "name": "exists:README_delivery.md",
+      "passed": true,
+      "details": "D:\\PyCharm\\Quant\\financial-performance-prediction\\deliverables\\README_delivery.md must exist"
+    },
     {
       "name": "environment_name",
       "passed": true,
-      "details": "Environment must be QuantEnv"
+      "details": "Notebook execution must use QuantEnv"
     },
     {
-      "name": "environment_path",
+      "name": "environment_executable",
       "passed": true,
-      "details": "Python executable should point to QuantEnv"
+      "details": "Python executable should be under QuantEnv"
     },
     {
-      "name": "raw_exists:train.csv",
+      "name": "notebook_kernel",
       "passed": true,
-      "details": "Raw file must exist"
+      "details": "Notebook kernelspec must be Python (QuantEnv)"
     },
     {
-      "name": "raw_hash:train.csv",
+      "name": "notebook_no_from_src",
       "passed": true,
-      "details": "Raw file hash must match frozen manifest"
+      "details": "Notebook must not contain from src"
     },
     {
-      "name": "raw_exists:test.csv",
+      "name": "notebook_no_import_src",
       "passed": true,
-      "details": "Raw file must exist"
+      "details": "Notebook must not contain import src"
     },
     {
-      "name": "raw_hash:test.csv",
+      "name": "notebook_no_from_scripts",
       "passed": true,
-      "details": "Raw file hash must match frozen manifest"
+      "details": "Notebook must not contain from scripts"
     },
     {
-      "name": "raw_exists:sample_submission.csv",
+      "name": "notebook_no_import_scripts",
       "passed": true,
-      "details": "Raw file must exist"
+      "details": "Notebook must not contain import scripts"
     },
     {
-      "name": "raw_hash:sample_submission.csv",
+      "name": "notebook_contains:GroupKFold",
       "passed": true,
-      "details": "Raw file hash must match frozen manifest"
+      "details": "Notebook should include GroupKFold"
     },
     {
-      "name": "raw_exists:data_dictionary.txt",
+      "name": "notebook_contains:HistGradientBoostingRegressor",
       "passed": true,
-      "details": "Raw file must exist"
+      "details": "Notebook should include HistGradientBoostingRegressor"
     },
     {
-      "name": "raw_hash:data_dictionary.txt",
+      "name": "notebook_contains:CatBoostRegressor",
       "passed": true,
-      "details": "Raw file hash must match frozen manifest"
+      "details": "Notebook should include CatBoostRegressor"
     },
     {
-      "name": "raw_exists:说明.docx",
+      "name": "notebook_contains:submission.csv",
       "passed": true,
-      "details": "Raw file must exist"
+      "details": "Notebook should include submission.csv"
     },
     {
-      "name": "raw_hash:说明.docx",
+      "name": "notebook_contains:final_submission_manifest.json",
       "passed": true,
-      "details": "Raw file hash must match frozen manifest"
+      "details": "Notebook should include final_submission_manifest.json"
+    },
+    {
+      "name": "standalone_executed_no_errors",
+      "passed": true,
+      "details": "Executed notebook errors: []"
+    },
+    {
+      "name": "standalone_no_src",
+      "passed": true,
+      "details": "standalone_check must not contain copied src/"
+    },
+    {
+      "name": "standalone_no_scripts",
+      "passed": true,
+      "details": "standalone_check must not contain copied scripts/"
+    },
+    {
+      "name": "figures_count",
+      "passed": true,
+      "details": "At least 13 generated figures should exist"
+    },
+    {
+      "name": "figures_nonempty",
+      "passed": true,
+      "details": "Generated figures must be non-empty"
+    },
+    {
+      "name": "table_exists:schema_summary.csv",
+      "passed": true,
+      "details": "schema_summary.csv must exist"
+    },
+    {
+      "name": "table_exists:missing_rate_by_quarter.csv",
+      "passed": true,
+      "details": "missing_rate_by_quarter.csv must exist"
+    },
+    {
+      "name": "table_exists:target_summary.csv",
+      "passed": true,
+      "details": "target_summary.csv must exist"
+    },
+    {
+      "name": "table_exists:all_model_scores.csv",
+      "passed": true,
+      "details": "all_model_scores.csv must exist"
+    },
+    {
+      "name": "table_exists:final_model_scores.csv",
+      "passed": true,
+      "details": "final_model_scores.csv must exist"
+    },
+    {
+      "name": "table_exists:blend_scores.csv",
+      "passed": true,
+      "details": "blend_scores.csv must exist"
+    },
+    {
+      "name": "table_exists:accounting_postprocess_scores.csv",
+      "passed": true,
+      "details": "accounting_postprocess_scores.csv must exist"
+    },
+    {
+      "name": "experiment_ids",
+      "passed": true,
+      "details": "All required experiment IDs must be present"
+    },
+    {
+      "name": "best_score_match",
+      "passed": true,
+      "details": "best_config must match all_model_scores M6"
     },
     {
       "name": "submission_shape",
       "passed": true,
-      "details": "Submission shape must match sample template"
+      "details": "Submission shape must match template"
     },
     {
       "name": "submission_columns",
       "passed": true,
-      "details": "Submission columns must preserve template order"
+      "details": "Submission columns must preserve sample order"
     },
     {
       "name": "submission_ids",
       "passed": true,
-      "details": "Submission Id column must match sample submission exactly"
+      "details": "Submission Id order must match sample"
     },
     {
       "name": "submission_nan",
@@ -90,107 +190,7 @@
     {
       "name": "submission_sha",
       "passed": true,
-      "details": "Submission sha must match manifest"
-    },
-    {
-      "name": "notebook_exists",
-      "passed": true,
-      "details": "Executed notebook must exist"
-    },
-    {
-      "name": "source_notebook_exists",
-      "passed": true,
-      "details": "Source notebook must exist"
-    },
-    {
-      "name": "report_exists",
-      "passed": true,
-      "details": "Report DOCX must exist"
-    },
-    {
-      "name": "report_pdf_exists",
-      "passed": true,
-      "details": "Report PDF preview must exist"
-    },
-    {
-      "name": "readme_exists",
-      "passed": true,
-      "details": "README must exist"
-    },
-    {
-      "name": "source_notebook_self_bootstrap",
-      "passed": true,
-      "details": "Source notebook must be able to generate missing project artifacts before displaying results"
-    },
-    {
-      "name": "source_notebook_rebuilds_models_and_figures",
-      "passed": true,
-      "details": "Source notebook must include model and figure rebuild steps"
-    },
-    {
-      "name": "source_notebook_kernel",
-      "passed": true,
-      "details": "Source notebook kernelspec must point to Python (QuantEnv)"
-    },
-    {
-      "name": "notebook_sha",
-      "passed": true,
-      "details": "Notebook sha must match manifest"
-    },
-    {
-      "name": "report_sha",
-      "passed": true,
-      "details": "Report sha must match manifest"
-    },
-    {
-      "name": "report_pdf_sha",
-      "passed": true,
-      "details": "Report PDF sha must match report manifest"
-    },
-    {
-      "name": "report_pdf_validation_sha",
-      "passed": true,
-      "details": "Report PDF sha must match PDF validation"
-    },
-    {
-      "name": "report_pdf_pages",
-      "passed": true,
-      "details": "Report PDF must have pages"
-    },
-    {
-      "name": "report_pdf_title",
-      "passed": true,
-      "details": "Report PDF first page must contain title text"
-    },
-    {
-      "name": "report_pdf_preview:results\\report_pdf_preview\\report_page_1.png",
-      "passed": true,
-      "details": "PDF preview image must exist"
-    },
-    {
-      "name": "report_pdf_preview:results\\report_pdf_preview\\report_page_3.png",
-      "passed": true,
-      "details": "PDF preview image must exist"
-    },
-    {
-      "name": "report_pdf_preview:results\\report_pdf_preview\\report_page_15.png",
-      "passed": true,
-      "details": "PDF preview image must exist"
-    },
-    {
-      "name": "readme_sha",
-      "passed": true,
-      "details": "README sha must match package manifest"
-    },
-    {
-      "name": "best_config",
-      "passed": true,
-      "details": "Best config should reflect final blend stage"
-    },
-    {
-      "name": "report_paragraphs",
-      "passed": true,
-      "details": "Report should contain multiple paragraphs"
+      "details": "Submission sha must match final manifest"
     },
     {
       "name": "report_tables",
@@ -200,28 +200,74 @@
     {
       "name": "report_figures",
       "passed": true,
-      "details": "Report should embed the key figures"
+      "details": "Report should embed key figures"
     },
     {
-      "name": "report_title",
+      "name": "report_current_score",
       "passed": true,
-      "details": "Report title should be present"
+      "details": "Report should contain current OOF score"
     },
     {
-      "name": "experiment_log_rows",
+      "name": "report_no_old_score",
       "passed": true,
-      "details": "Experiment log should include 5 folds x 9 targets for each required experiment"
+      "details": "Report should not contain the previous OOF score"
     },
     {
-      "name": "experiment_log_ids",
+      "name": "report_sha",
       "passed": true,
-      "details": "Required experiments must be logged"
+      "details": "Report sha must match report manifest"
+    },
+    {
+      "name": "pdf_sha",
+      "passed": true,
+      "details": "PDF sha must match PDF validation"
+    },
+    {
+      "name": "pdf_title",
+      "passed": true,
+      "details": "PDF first page must contain title text"
+    },
+    {
+      "name": "readme_sha",
+      "passed": true,
+      "details": "README sha must match package manifest"
+    },
+    {
+      "name": "minimal_submission_exists",
+      "passed": true,
+      "details": "final_submission/ must exist"
+    },
+    {
+      "name": "minimal_submission_exact_files",
+      "passed": true,
+      "details": "final_submission/ must contain only the final Notebook, Word report, and submission.csv"
+    },
+    {
+      "name": "minimal_submission_sha:financial_performance_prediction_final.ipynb",
+      "passed": true,
+      "details": "financial_performance_prediction_final.ipynb in final_submission/ must match deliverables/"
+    },
+    {
+      "name": "minimal_submission_sha:financial_performance_prediction_report.docx",
+      "passed": true,
+      "details": "financial_performance_prediction_report.docx in final_submission/ must match deliverables/"
+    },
+    {
+      "name": "minimal_submission_sha:submission.csv",
+      "passed": true,
+      "details": "submission.csv in final_submission/ must match deliverables/"
+    },
+    {
+      "name": "minimal_submission_manifest",
+      "passed": true,
+      "details": "Package manifest must list the three minimal submission files"
     }
   ],
   "best_experiment_id": "M6_oof_blend",
-  "best_mean_oof_r2": 0.8572266051577525,
-  "final_submission_sha256": "c8c777fb68ca7d363e218b8ff09d4d7eb2e189f92084523779bc0de9c947e97f",
-  "report_sha256": "80b913f0f2ddf3cbb9a9738b3c9aa8958877548f5eb5b32d1e06bd608e1539f4",
-  "report_pdf_sha256": "f7e57553ec36a09df73d3e9c581d82ca158f71f232ca07a8ad87e31f77ab61dd",
-  "notebook_sha256": "c2eb9e5cfc81a86be4bf3ac6a8797110db5c5c22089392259feae0023462e60a"
+  "best_mean_oof_r2": 0.8491283658094627,
+  "final_submission_sha256": "a488f55ba7c5254ed4490ee12c12d871a6275a9779d7b67fa28bbb8669515fd2",
+  "report_sha256": "530cb25c4b4858cc89461a86ba21622688b51225cd0b4da153aa7c6790858ed0",
+  "report_pdf_sha256": "28c3a5d9552b0b277d76c17328561f0e3d03ba4c5ae22b5447fd3a26136ed744",
+  "notebook_sha256": "e2cd62b5248c3827fcfcf646929c7a353dbdbd1f45478c0be33247b1e415ef29",
+  "executed_notebook_sha256": "769745ffdbe5b1c5e71d4819fb0b18a7f929a855899490108531f18d2169e512"
 }

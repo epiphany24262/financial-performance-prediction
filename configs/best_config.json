@@ -1,8 +1,22 @@
 {
-  "status": "updated_with_final_blend",
+  "status": "generated_by_standalone_notebook",
   "best_experiment_id": "M6_oof_blend",
-  "best_mean_oof_r2": 0.8572266051577525,
-  "best_fold_mean_r2_std": 0.04904840309149961,
-  "timestamp_utc": "2026-06-10T05:03:10.611930+00:00",
-  "notes": "Best current result after OOF blend and accounting-postprocess evaluation."
+  "best_mean_oof_r2": 0.8491283658094627,
+  "best_fold_mean_r2_std": 0.07407458032794695,
+  "model_family": "OOF blend with optional accounting postprocess",
+  "catboost_params": {
+    "loss_function": "RMSE",
+    "iterations": 180,
+    "learning_rate": 0.03,
+    "depth": 4,
+    "l2_leaf_reg": 8.0,
+    "random_seed": 42,
+    "verbose": false,
+    "allow_writing_files": false,
+    "od_type": "Iter",
+    "od_wait": 20,
+    "use_best_model": true
+  },
+  "timestamp_utc": "2026-06-10T15:44:26.688044+00:00",
+  "notes": "All final parameters are fixed in the standalone notebook; blend and accounting choices are selected on OOF only."
 }
