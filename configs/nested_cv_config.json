@@ -1,0 +1,10 @@
+{
+  "validation_protocol": "nested GroupKFold",
+  "outer_splits": 5,
+  "inner_splits": 4,
+  "grouping_columns": "Q1-Q10 raw historical columns only",
+  "history_group_column_count": 170,
+  "nested_mean_r2": 0.7460350778199567,
+  "nested_fold_mean_r2_std": 0.2171320063756561,
+  "timestamp_utc": "2026-06-11T09:03:38.445302+00:00"
+}

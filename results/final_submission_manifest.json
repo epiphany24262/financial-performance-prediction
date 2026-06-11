@@ -1,6 +1,6 @@
 {
   "submission_path": "deliverables/submission.csv",
-  "submission_sha256": "a488f55ba7c5254ed4490ee12c12d871a6275a9779d7b67fa28bbb8669515fd2",
+  "submission_sha256": "4e85827620e50ca5874184ccf5bfdbcf96cc880149f0b54a17b2b237f5cf1705",
   "row_count": 406,
   "column_count": 10,
   "columns": [
@@ -15,7 +15,12 @@
     "Q0_TOTAL_LIABILITIES",
     "Q0_TOTAL_STOCKHOLDERS_EQUITY"
   ],
-  "final_experiment_id": "M6_oof_blend",
+  "final_experiment_id": "M4_catboost_residual_history_metadata_engineered",
+  "final_model_label": "M4",
   "best_adjustment": "none",
-  "timestamp_utc": "2026-06-10T15:44:26.688044+00:00"
+  "calibration_mean_oof_r2": 0.7896678489613664,
+  "nested_validation_experiment_id": "M4_nested_catboost_residual",
+  "nested_mean_oof_r2": 0.75983867877668,
+  "nested_fold_mean_r2_std": 0.2271658905358628,
+  "timestamp_utc": "2026-06-11T09:03:38.445302+00:00"
 }

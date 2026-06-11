@@ -1,12 +1,16 @@
 {
   "status": "generated_by_standalone_notebook",
-  "best_experiment_id": "M6_oof_blend",
-  "best_mean_oof_r2": 0.8491283658094627,
-  "best_fold_mean_r2_std": 0.07407458032794695,
+  "best_experiment_id": "M4_catboost_residual_history_metadata_engineered",
+  "best_mean_oof_r2": 0.7896678489613664,
+  "best_fold_mean_r2_std": 0.19288697160064355,
+  "nested_validation_experiment_id": "M4_nested_catboost_residual",
+  "nested_mean_oof_r2": 0.75983867877668,
+  "nested_fold_mean_r2_std": 0.2271658905358628,
+  "nested_protocol": "outer 5-fold GroupKFold / inner 4-fold GroupKFold; groups are Q1-Q10 raw history hashes",
   "model_family": "OOF blend with optional accounting postprocess",
   "catboost_params": {
     "loss_function": "RMSE",
-    "iterations": 180,
+    "iterations": 60,
     "learning_rate": 0.03,
     "depth": 4,
     "l2_leaf_reg": 8.0,
@@ -17,6 +21,6 @@
     "od_wait": 20,
     "use_best_model": true
   },
-  "timestamp_utc": "2026-06-10T15:44:26.688044+00:00",
-  "notes": "All final parameters are fixed in the standalone notebook; blend and accounting choices are selected on OOF only."
+  "timestamp_utc": "2026-06-11T09:03:38.445302+00:00",
+  "notes": "Final test weights are calibrated on full-data GroupKFold OOF; nested_mean_oof_r2 is the report's generalization estimate."
 }

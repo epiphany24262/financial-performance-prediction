@@ -2,7 +2,7 @@
   "report_title": "财务绩效预测研究报告",
   "language": "zh-CN",
   "style_reference": "D:/PyCharm/Quant/consume_bonus",
-  "best_experiment_id": "M6_oof_blend",
+  "best_experiment_id": "M4_catboost_residual_history_metadata_engineered",
   "figure_files": [
     "fig01_sector_distribution.png",
     "fig02_industry_top20.png",
@@ -28,10 +28,10 @@
     "blend_scores.csv",
     "accounting_postprocess_scores.csv"
   ],
-  "report_sha256": "530cb25c4b4858cc89461a86ba21622688b51225cd0b4da153aa7c6790858ed0",
-  "submission_sha256": "a488f55ba7c5254ed4490ee12c12d871a6275a9779d7b67fa28bbb8669515fd2",
-  "generated_utc": "2026-06-10T15:51:10.890590+00:00",
-  "report_pdf_sha256": "28c3a5d9552b0b277d76c17328561f0e3d03ba4c5ae22b5447fd3a26136ed744",
+  "report_sha256": "d9eabc4c2ababf6b1eb04fbfb8d71c7597911be37f3f8f2bc2ff9f1441ec6619",
+  "submission_sha256": "4e85827620e50ca5874184ccf5bfdbcf96cc880149f0b54a17b2b237f5cf1705",
+  "generated_utc": "2026-06-11T09:07:18.505930+00:00",
+  "report_pdf_sha256": "fdc7bbc9b77f98943cca24d166b97b14d495254404ddeafc36c2221c3a9cc8b9",
   "report_pdf_page_count": 16,
   "report_pdf_preview_images": [
     "results\\report_pdf_preview\\report_page_1.png",

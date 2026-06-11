@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "timestamp_utc": "2026-06-11T03:22:34.287688+00:00",
+  "timestamp_utc": "2026-06-11T09:09:35.216206+00:00",
   "checks": [
     {
       "name": "exists:financial_performance_prediction_final.ipynb",
@@ -73,6 +73,11 @@
       "details": "Notebook should include GroupKFold"
     },
     {
+      "name": "notebook_contains:nested GroupKFold",
+      "passed": true,
+      "details": "Notebook should include nested GroupKFold"
+    },
+    {
       "name": "notebook_contains:HistGradientBoostingRegressor",
       "passed": true,
       "details": "Notebook should include HistGradientBoostingRegressor"
@@ -93,9 +98,84 @@
       "details": "Notebook should include final_submission_manifest.json"
     },
     {
+      "name": "notebook_history_grouping",
+      "passed": true,
+      "details": "Notebook must group folds with Q1-Q10 raw history columns"
+    },
+    {
+      "name": "notebook_no:Kaggle",
+      "passed": true,
+      "details": "Notebook source must not contain Kaggle"
+    },
+    {
+      "name": "notebook_no:Leaderboard",
+      "passed": true,
+      "details": "Notebook source must not contain Leaderboard"
+    },
+    {
+      "name": "notebook_no:Public Score",
+      "passed": true,
+      "details": "Notebook source must not contain Public Score"
+    },
+    {
+      "name": "notebook_no:Private Score",
+      "passed": true,
+      "details": "Notebook source must not contain Private Score"
+    },
+    {
+      "name": "notebook_no:Late Submission",
+      "passed": true,
+      "details": "Notebook source must not contain Late Submission"
+    },
+    {
+      "name": "notebook_no:排行榜",
+      "passed": true,
+      "details": "Notebook source must not contain 排行榜"
+    },
+    {
+      "name": "notebook_no:Q5+ 季度缺失率 > 70%",
+      "passed": true,
+      "details": "Notebook source must not contain Q5+ 季度缺失率 > 70%"
+    },
+    {
+      "name": "notebook_no:OOF mean R² > 0.85",
+      "passed": true,
+      "details": "Notebook source must not contain OOF mean R² > 0.85"
+    },
+    {
+      "name": "notebook_no:鍘",
+      "passed": true,
+      "details": "Notebook source must not contain 鍘"
+    },
+    {
+      "name": "notebook_no:锟",
+      "passed": true,
+      "details": "Notebook source must not contain 锟"
+    },
+    {
+      "name": "notebook_no:�",
+      "passed": true,
+      "details": "Notebook source must not contain �"
+    },
+    {
+      "name": "notebook_embedded_figures",
+      "passed": true,
+      "details": "Final notebook should retain embedded figure outputs"
+    },
+    {
+      "name": "notebook_has_outputs",
+      "passed": true,
+      "details": "Final notebook should be an executed notebook with outputs"
+    },
+    {
       "name": "standalone_executed_no_errors",
       "passed": true,
       "details": "Executed notebook errors: []"
+    },
+    {
+      "name": "standalone_embedded_figures",
+      "passed": true,
+      "details": "Standalone executed notebook should contain embedded figure outputs"
     },
     {
       "name": "standalone_no_src",
@@ -138,6 +218,21 @@
       "details": "all_model_scores.csv must exist"
     },
     {
+      "name": "table_exists:nested_model_scores.csv",
+      "passed": true,
+      "details": "nested_model_scores.csv must exist"
+    },
+    {
+      "name": "table_exists:nested_fold_scores.csv",
+      "passed": true,
+      "details": "nested_fold_scores.csv must exist"
+    },
+    {
+      "name": "table_exists:nested_blend_scores.csv",
+      "passed": true,
+      "details": "nested_blend_scores.csv must exist"
+    },
+    {
       "name": "table_exists:final_model_scores.csv",
       "passed": true,
       "details": "final_model_scores.csv must exist"
@@ -158,9 +253,14 @@
       "details": "All required experiment IDs must be present"
     },
     {
-      "name": "best_score_match",
+      "name": "nested_score_match",
       "passed": true,
-      "details": "best_config must match all_model_scores M6"
+      "details": "best_config nested score must match nested_model_scores"
+    },
+    {
+      "name": "nested_oof_exists",
+      "passed": true,
+      "details": "Nested OOF file must exist"
     },
     {
       "name": "submission_shape",
@@ -205,12 +305,97 @@
     {
       "name": "report_current_score",
       "passed": true,
-      "details": "Report should contain current OOF score"
+      "details": "Report should contain current nested OOF score"
     },
     {
       "name": "report_no_old_score",
       "passed": true,
       "details": "Report should not contain the previous OOF score"
+    },
+    {
+      "name": "report_no:Kaggle",
+      "passed": true,
+      "details": "Report text must not contain Kaggle"
+    },
+    {
+      "name": "report_no:Leaderboard",
+      "passed": true,
+      "details": "Report text must not contain Leaderboard"
+    },
+    {
+      "name": "report_no:Public Score",
+      "passed": true,
+      "details": "Report text must not contain Public Score"
+    },
+    {
+      "name": "report_no:Private Score",
+      "passed": true,
+      "details": "Report text must not contain Private Score"
+    },
+    {
+      "name": "report_no:Late Submission",
+      "passed": true,
+      "details": "Report text must not contain Late Submission"
+    },
+    {
+      "name": "report_no:排行榜",
+      "passed": true,
+      "details": "Report text must not contain 排行榜"
+    },
+    {
+      "name": "report_no:Q5+ 季度缺失率 > 70%",
+      "passed": true,
+      "details": "Report text must not contain Q5+ 季度缺失率 > 70%"
+    },
+    {
+      "name": "report_no:OOF mean R² > 0.85",
+      "passed": true,
+      "details": "Report text must not contain OOF mean R² > 0.85"
+    },
+    {
+      "name": "report_no:鍘",
+      "passed": true,
+      "details": "Report text must not contain 鍘"
+    },
+    {
+      "name": "report_no:锟",
+      "passed": true,
+      "details": "Report text must not contain 锟"
+    },
+    {
+      "name": "report_no:�",
+      "passed": true,
+      "details": "Report text must not contain �"
+    },
+    {
+      "name": "report_no:未找到目录项",
+      "passed": true,
+      "details": "Report text must not contain 未找到目录项"
+    },
+    {
+      "name": "report_no:目录将在 Word 中打开后自动更新",
+      "passed": true,
+      "details": "Report text must not contain 目录将在 Word 中打开后自动更新"
+    },
+    {
+      "name": "report_no:姓名：",
+      "passed": true,
+      "details": "Report text must not contain 姓名："
+    },
+    {
+      "name": "report_no:学号：",
+      "passed": true,
+      "details": "Report text must not contain 学号："
+    },
+    {
+      "name": "report_no:班级：",
+      "passed": true,
+      "details": "Report text must not contain 班级："
+    },
+    {
+      "name": "report_no:指导教师：",
+      "passed": true,
+      "details": "Report text must not contain 指导教师："
     },
     {
       "name": "report_sha",
@@ -228,9 +413,154 @@
       "details": "PDF first page must contain title text"
     },
     {
+      "name": "pdf_no:Kaggle",
+      "passed": true,
+      "details": "PDF text must not contain Kaggle"
+    },
+    {
+      "name": "pdf_no:Leaderboard",
+      "passed": true,
+      "details": "PDF text must not contain Leaderboard"
+    },
+    {
+      "name": "pdf_no:Public Score",
+      "passed": true,
+      "details": "PDF text must not contain Public Score"
+    },
+    {
+      "name": "pdf_no:Private Score",
+      "passed": true,
+      "details": "PDF text must not contain Private Score"
+    },
+    {
+      "name": "pdf_no:Late Submission",
+      "passed": true,
+      "details": "PDF text must not contain Late Submission"
+    },
+    {
+      "name": "pdf_no:排行榜",
+      "passed": true,
+      "details": "PDF text must not contain 排行榜"
+    },
+    {
+      "name": "pdf_no:Q5+ 季度缺失率 > 70%",
+      "passed": true,
+      "details": "PDF text must not contain Q5+ 季度缺失率 > 70%"
+    },
+    {
+      "name": "pdf_no:OOF mean R² > 0.85",
+      "passed": true,
+      "details": "PDF text must not contain OOF mean R² > 0.85"
+    },
+    {
+      "name": "pdf_no:鍘",
+      "passed": true,
+      "details": "PDF text must not contain 鍘"
+    },
+    {
+      "name": "pdf_no:锟",
+      "passed": true,
+      "details": "PDF text must not contain 锟"
+    },
+    {
+      "name": "pdf_no:�",
+      "passed": true,
+      "details": "PDF text must not contain �"
+    },
+    {
+      "name": "pdf_no:未找到目录项",
+      "passed": true,
+      "details": "PDF text must not contain 未找到目录项"
+    },
+    {
+      "name": "pdf_no:目录将在 Word 中打开后自动更新",
+      "passed": true,
+      "details": "PDF text must not contain 目录将在 Word 中打开后自动更新"
+    },
+    {
+      "name": "pdf_no:姓名：",
+      "passed": true,
+      "details": "PDF text must not contain 姓名："
+    },
+    {
+      "name": "pdf_no:学号：",
+      "passed": true,
+      "details": "PDF text must not contain 学号："
+    },
+    {
+      "name": "pdf_no:班级：",
+      "passed": true,
+      "details": "PDF text must not contain 班级："
+    },
+    {
+      "name": "pdf_no:指导教师：",
+      "passed": true,
+      "details": "PDF text must not contain 指导教师："
+    },
+    {
       "name": "readme_sha",
       "passed": true,
       "details": "README sha must match package manifest"
+    },
+    {
+      "name": "readme_no:Kaggle",
+      "passed": true,
+      "details": "README must not contain Kaggle"
+    },
+    {
+      "name": "readme_no:Leaderboard",
+      "passed": true,
+      "details": "README must not contain Leaderboard"
+    },
+    {
+      "name": "readme_no:Public Score",
+      "passed": true,
+      "details": "README must not contain Public Score"
+    },
+    {
+      "name": "readme_no:Private Score",
+      "passed": true,
+      "details": "README must not contain Private Score"
+    },
+    {
+      "name": "readme_no:Late Submission",
+      "passed": true,
+      "details": "README must not contain Late Submission"
+    },
+    {
+      "name": "readme_no:排行榜",
+      "passed": true,
+      "details": "README must not contain 排行榜"
+    },
+    {
+      "name": "readme_no:Q5+ 季度缺失率 > 70%",
+      "passed": true,
+      "details": "README must not contain Q5+ 季度缺失率 > 70%"
+    },
+    {
+      "name": "readme_no:OOF mean R² > 0.85",
+      "passed": true,
+      "details": "README must not contain OOF mean R² > 0.85"
+    },
+    {
+      "name": "readme_no:鍘",
+      "passed": true,
+      "details": "README must not contain 鍘"
+    },
+    {
+      "name": "readme_no:锟",
+      "passed": true,
+      "details": "README must not contain 锟"
+    },
+    {
+      "name": "readme_no:�",
+      "passed": true,
+      "details": "README must not contain �"
+    },
+    {
+      "name": "readme_no:历史/元数据特征哈希",
+      "passed": true,
+      "details": "README must not contain 历史/元数据特征哈希"
     },
     {
       "name": "minimal_submission_exists",
@@ -263,11 +593,12 @@
       "details": "Package manifest must list the three minimal submission files"
     }
   ],
-  "best_experiment_id": "M6_oof_blend",
-  "best_mean_oof_r2": 0.8491283658094627,
-  "final_submission_sha256": "a488f55ba7c5254ed4490ee12c12d871a6275a9779d7b67fa28bbb8669515fd2",
-  "report_sha256": "530cb25c4b4858cc89461a86ba21622688b51225cd0b4da153aa7c6790858ed0",
-  "report_pdf_sha256": "28c3a5d9552b0b277d76c17328561f0e3d03ba4c5ae22b5447fd3a26136ed744",
-  "notebook_sha256": "e2cd62b5248c3827fcfcf646929c7a353dbdbd1f45478c0be33247b1e415ef29",
-  "executed_notebook_sha256": "769745ffdbe5b1c5e71d4819fb0b18a7f929a855899490108531f18d2169e512"
+  "best_experiment_id": "M4_catboost_residual_history_metadata_engineered",
+  "best_mean_oof_r2": 0.7896678489613664,
+  "nested_mean_oof_r2": 0.75983867877668,
+  "final_submission_sha256": "4e85827620e50ca5874184ccf5bfdbcf96cc880149f0b54a17b2b237f5cf1705",
+  "report_sha256": "d9eabc4c2ababf6b1eb04fbfb8d71c7597911be37f3f8f2bc2ff9f1441ec6619",
+  "report_pdf_sha256": "fdc7bbc9b77f98943cca24d166b97b14d495254404ddeafc36c2221c3a9cc8b9",
+  "notebook_sha256": "d41c9e62c31ba199dc0cf0d3fad9c2f37051a886e9e6b5ca5dd1d318f853c760",
+  "executed_notebook_sha256": "d41c9e62c31ba199dc0cf0d3fad9c2f37051a886e9e6b5ca5dd1d318f853c760"
 }
