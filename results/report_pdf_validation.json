@@ -1,12 +1,12 @@
 {
   "pdf_path": "deliverables\\financial_performance_prediction_report.pdf",
-  "pdf_sha256": "e03590921aaeeb26904726fe2d253229b19f8e8794f660240550e69848ea5aad",
-  "page_count": 15,
+  "pdf_sha256": "8fc61c3be8fd12a27761ff90c52a4bf21a2e308da24bd665b6dd0cbf9f4166c7",
+  "page_count": 18,
   "first_page_has_title": true,
   "preview_images": [
     "results\\report_pdf_preview\\report_page_1.png",
     "results\\report_pdf_preview\\report_page_3.png",
-    "results\\report_pdf_preview\\report_page_15.png"
+    "results\\report_pdf_preview\\report_page_18.png"
   ],
-  "generated_utc": "2026-06-11T10:45:37.747137+00:00"
+  "generated_utc": "2026-06-14T07:49:14.000394+00:00"
 }
